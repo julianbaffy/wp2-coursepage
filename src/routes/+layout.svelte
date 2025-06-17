@@ -8,9 +8,11 @@
 <div class="app">
 	<Header />
 
-	<main>
-		{@render children()}
-	</main>
+	<div class="flex-grow mt-12">
+		<main>
+			{@render children()}
+		</main>
+	</div>
 
 	<footer>
 		<div>
@@ -26,7 +28,7 @@
 	.app {
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
+		min-height: 100dvh;
 	}
 
 	main {
