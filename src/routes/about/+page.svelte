@@ -1,26 +1,21 @@
+<script lang="ts">
+	import overview from '$lib/images/projectoverview.png';
+</script>
+
+
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
 
 <div class="text-column">
-	<h1>About this app</h1>
-
+	<h1>Die Website Projekte</h1>
 	<p>
-		This is a <a href="https://svelte.dev/docs/kit">SvelteKit</a> app. You can make your own by typing
-		the following into your command line and following the prompts:
+		Direkt zu Beginn des Wahlpflichtfaches Informatik in der neunten Klasse lernen die Schülerinnen und Schüler
+		.html Dateien zu erstellen und zu gestalten. Dadurch lernen sie das Grundprinzip der Markup Language kennen,
+		welche Grundlage für jede Website im www ist. Anschließend werden CSS sheets hinzugefügt und ein ganzes Website Projekt erstellt.
 	</p>
 
-	<pre>npx sv create</pre>
-
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
+	<img src={overview} alt="Übersicht" class="mt-12 w-full" />
 </div>
+
