@@ -2,7 +2,19 @@
     import LinkGrid from "$lib/Components/LinkGrid.svelte";
 	import { Tabs } from '@skeletonlabs/skeleton-svelte';
 
-  let group = $state('1');
+	let { data } : {data: {
+		links: {
+			courseID: string;
+			title: string;
+			url: string;
+			description: string;
+		}[];}
+	} = $props();
+
+	console.log(data);
+
+
+  	let group = $state('1');
 </script>
 
 <svelte:head>
@@ -26,8 +38,8 @@
     <Tabs.Control value="2">IF2 BAF</Tabs.Control>
   {/snippet}
   {#snippet content()}
-    <Tabs.Panel value="1"><LinkGrid courseID="1" /></Tabs.Panel>
-    <Tabs.Panel value="2"><LinkGrid courseID="2" /></Tabs.Panel>
+    <Tabs.Panel value="1"><LinkGrid courseID="1" links={data.links} /></Tabs.Panel>
+    <Tabs.Panel value="2"><LinkGrid courseID="2" links={data.links} /></Tabs.Panel>
   {/snippet}
 </Tabs>
 
