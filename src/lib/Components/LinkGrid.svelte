@@ -3,13 +3,13 @@
    let {courseID = "1"} = $props() //set default on 1
 
   let links = [
-      { courseID: "2", title: "Antonia, P.", url: "studentpages/Antonia_P/website.html", description: "Hockey" },
-      { courseID: "2", title: "Kira, S.", url: "studentpages/Kira_S/Index.html", description: "Häkeln lernen" },
-      { courseID: "2", title: "Margó, W.", url: "studentpages/Margo_W/website.html", description: "Volleyball" },
-      { courseID: "2", title: "Mattes, P.", url: "studentpages/Mattes_P/Index.html", description: "Formel 1" },
-      { courseID: "2", title: "Neele, S.", url: "studentpages/Neele_S/fussball.html", description: "Fußball" },
-      { courseID: "2", title: "Paul, S.", url: "studentpages/Paul_S/barca.html", description: "FC Barcelona" },
-      { courseID: "2", title: "Leopold, L.", url: "studentpages/Leopold_LS/Index.html", description: "NBA Fanpage"},
+      { courseID: "2", title: "Antonia, P.", url: "studentpages/Antonia_P/index.html", description: "Hockey" },
+      { courseID: "2", title: "Kira, S.", url: "studentpages/Kira_S/index.html", description: "Häkeln lernen" },
+      { courseID: "2", title: "Margó, W.", url: "studentpages/Margo_W/index.html", description: "Volleyball" },
+      { courseID: "2", title: "Mattes, P.", url: "studentpages/Mattes_P/index.html", description: "Formel 1" },
+      { courseID: "2", title: "Neele, S.", url: "studentpages/Neele_S/index.html", description: "Fußball" },
+      { courseID: "2", title: "Paul, S.", url: "studentpages/Paul_S/index.html", description: "FC Barcelona" },
+      { courseID: "2", title: "Leopold, L.", url: "studentpages/Leopold_LS/index.html", description: "NBA Fanpage"},
   ];
 
   // Filtere die Links basierend auf der übergebenen CourseID
