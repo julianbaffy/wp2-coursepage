@@ -16,6 +16,6 @@
 		welche Grundlage für jede Website im www ist. Anschließend werden CSS sheets hinzugefügt und ein ganzes Website Projekt erstellt.
 	</p>
 
-	<img src={overview} alt="Übersicht" class="mt-12 w-full" />
+	<img src={overview} alt="Übersicht" class="mt-6 w-full" />
 </div>
 
