@@ -13,9 +13,12 @@
 	</main>
 
 	<footer>
-		<p>
-			visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to learn about SvelteKit
-		</p>
+		<div>
+			&copy; Julian Baldauf, 2024
+		</div>
+		<div>
+			<a href="/impress">Impressum</a>
+		</div>
 	</footer>
 </div>
 
@@ -39,10 +42,12 @@
 
 	footer {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		flex-direction: row;
+		justify-content: space-between;
 		align-items: center;
 		padding: 12px;
+		margin-left: 30px;
+		margin-right: 30px;
 	}
 
 	footer a {

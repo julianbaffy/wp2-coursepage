@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import logo from '$lib/images/svelte-logo.svg';
+	import logo from '$lib/images/APG-logo.jpg';
 	import github from '$lib/images/github.svg';
 </script>
 
 <header>
 	<div class="corner">
-		<a href="https://svelte.dev/docs/kit">
+		<a href="https://www.apostelgymnasium.de/" target="_blank">
 			<img src={logo} alt="SvelteKit" />
 		</a>
 	</div>
@@ -31,8 +31,8 @@
 		</svg>
 	</nav>
 
-	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
+	<div class="corner transparent">
+		<a href="https://github.com/julianbaffy/wp2-coursepage">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
