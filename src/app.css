@@ -41,6 +41,20 @@ h1,
 h2,
 p {
 	font-weight: 400;
+	padding: 6px;
+}
+
+h1 {
+	margin-top: 12px;
+	margin-bottom: 20px;
+}
+
+h2 {
+	margin-bottom: 10px;
+}
+
+section{
+	margin-bottom: 20px;
 }
 
 p {
