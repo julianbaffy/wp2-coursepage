@@ -46,5 +46,11 @@
     "teacher": "BAF",
     "title": "Paul S",
     "url": "studentpages/2_BAF/Paul_S/index.html"
+  },
+  {
+    "courseID": "3",
+    "teacher": "BUG",
+    "title": "Test",
+    "url": "studentpages/3_BUG/Test/index.html"
   }
 ]

@@ -10,8 +10,6 @@
 			description: string;
 		}[];}
 	} = $props();
-
-	console.log(data);
 	
   	let group = $state('2');
 </script>
