@@ -1,5 +1,5 @@
 // scripts/generate-links.js
-import { readdir, writeFile } from "fs/promises";
+import { readdir, stat, writeFile } from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -12,10 +12,27 @@ async function getLinks() {
 
   for (const courseID of courseDirs) {
     const coursePath = path.join(basePath, courseID);
+    const statCourse = await stat(coursePath);
+    if (!statCourse.isDirectory()) continue;
+
     const studentDirs = await readdir(coursePath);
-    for (const student of studentDirs) {
-      const url = `studentpages/${courseID}/${student}/index.html`;
-      const title = student.replace(/_/g, ", ").replace(/\..+$/, "");
+    for (const studentDir of studentDirs) {
+      const studentPath = path.join(coursePath, studentDir);
+      const statStudent = await stat(studentPath);
+      if (!statStudent.isDirectory()) continue;
+
+      const indexPath = path.join(studentPath, "index.html");
+      try {
+        const statIndex = await stat(indexPath);
+        if (!statIndex.isFile()) continue;
+      } catch {
+        continue; // kein index.html vorhanden
+      }
+
+      // Titel aus Ordnernamen generieren
+      const title = studentDir.replace(/_/g, " ").replace(/,\s*/, ", ").replace(/\b(\w)/g, c => c.toUpperCase());
+
+      const url = `studentpages/${courseID}/${studentDir}/index.html`;
       links.push({ courseID, title, url });
     }
   }
