@@ -4,13 +4,20 @@ export const prerender = true;
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ fetch }) => {
-	const res = await fetch('/studentpages/links.json');
+	const [linksRes, coursesRes] = await Promise.all([
+		fetch('/studentpages/links.json'),
+		fetch('/studentpages/courses.json')
+	]);
 
-	if (!res.ok) {
-		console.error('⚠️ Fehler beim Laden der studentpages/links.json');
-		return { links: [] };
+	if (!linksRes.ok || !coursesRes.ok) {
+		console.error('⚠️ Fehler beim Laden von studentpages JSON-Dateien');
+		return { links: [], courses: [] };
 	}
 
-	const links = await res.json();
-	return { links };
+	const [links, courses] = await Promise.all([
+		linksRes.json(),
+		coursesRes.json()
+	]);
+
+	return { links, courses };
 };

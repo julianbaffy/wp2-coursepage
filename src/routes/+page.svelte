@@ -5,9 +5,14 @@
 	let { data } : {data: {
 		links: {
 			courseID: string;
+			teacher: string;
 			title: string;
 			url: string;
 			description: string;
+		}[],
+		courses: {
+			courseID: string;
+			teacher: string;
 		}[];}
 	} = $props();
 	

@@ -2,6 +2,7 @@
   
    let {courseID = "1", links} : {courseID: string, links: {
     courseID: string;
+    teacher: string;
     title: string;
     url: string;
     description: string;
