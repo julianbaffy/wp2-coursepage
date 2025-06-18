@@ -14,6 +14,17 @@
 	console.log(data);
 
 
+	let { data } : {data: {
+		links: {
+			courseID: string;
+			title: string;
+			url: string;
+			description: string;
+		}[];}
+	} = $props();
+
+	console.log(data);
+	
   	let group = $state('1');
 </script>
 
