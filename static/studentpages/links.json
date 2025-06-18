@@ -1,42 +1,50 @@
 [
   {
     "courseID": "1",
+    "teacher": "BEH",
     "title": "Test",
-    "url": "studentpages/1/Test/index.html"
+    "url": "studentpages/1_BEH/Test/index.html"
   },
   {
     "courseID": "2",
+    "teacher": "BAF",
     "title": "Antonia P",
-    "url": "studentpages/2/Antonia_P/index.html"
+    "url": "studentpages/2_BAF/Antonia_P/index.html"
   },
   {
     "courseID": "2",
+    "teacher": "BAF",
     "title": "Kira S",
-    "url": "studentpages/2/Kira_S/index.html"
+    "url": "studentpages/2_BAF/Kira_S/index.html"
   },
   {
     "courseID": "2",
+    "teacher": "BAF",
     "title": "Leopold LS",
-    "url": "studentpages/2/Leopold_LS/index.html"
+    "url": "studentpages/2_BAF/Leopold_LS/index.html"
   },
   {
     "courseID": "2",
+    "teacher": "BAF",
     "title": "Margo W",
-    "url": "studentpages/2/Margo_W/index.html"
+    "url": "studentpages/2_BAF/Margo_W/index.html"
   },
   {
     "courseID": "2",
+    "teacher": "BAF",
     "title": "Mattes P",
-    "url": "studentpages/2/Mattes_P/index.html"
+    "url": "studentpages/2_BAF/Mattes_P/index.html"
   },
   {
     "courseID": "2",
+    "teacher": "BAF",
     "title": "Neele S",
-    "url": "studentpages/2/Neele_S/index.html"
+    "url": "studentpages/2_BAF/Neele_S/index.html"
   },
   {
     "courseID": "2",
+    "teacher": "BAF",
     "title": "Paul S",
-    "url": "studentpages/2/Paul_S/index.html"
+    "url": "studentpages/2_BAF/Paul_S/index.html"
   }
 ]
