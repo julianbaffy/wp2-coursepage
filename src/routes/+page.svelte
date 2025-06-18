@@ -13,7 +13,7 @@
 
 	console.log(data);
 	
-  	let group = $state('1');
+  	let group = $state('2');
 </script>
 
 <svelte:head>
