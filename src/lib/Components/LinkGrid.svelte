@@ -1,16 +1,11 @@
  <script lang="ts">
   
-   let {courseID = "1"} = $props() //set default on 1
-
-  let links = [
-      { courseID: "2", title: "Antonia, P.", url: "studentpages/Antonia_P/index.html", description: "Hockey" },
-      { courseID: "2", title: "Kira, S.", url: "studentpages/Kira_S/index.html", description: "Häkeln lernen" },
-      { courseID: "2", title: "Margó, W.", url: "studentpages/Margo_W/index.html", description: "Volleyball" },
-      { courseID: "2", title: "Mattes, P.", url: "studentpages/Mattes_P/index.html", description: "Formel 1" },
-      { courseID: "2", title: "Neele, S.", url: "studentpages/Neele_S/index.html", description: "Fußball" },
-      { courseID: "2", title: "Paul, S.", url: "studentpages/Paul_S/index.html", description: "FC Barcelona" },
-      { courseID: "2", title: "Leopold, L.", url: "studentpages/Leopold_LS/index.html", description: "NBA Fanpage"},
-  ];
+   let {courseID = "1", links} : {courseID: string, links: {
+    courseID: string;
+    title: string;
+    url: string;
+    description: string;
+  }[]} = $props()
 
   // Filtere die Links basierend auf der übergebenen CourseID
   let filteredLinks = $derived(links.filter(link => link.courseID === courseID));
