@@ -1,13 +1,9 @@
-# sv
-
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
-
 ## Adding new Studentpages and Courses
 
 1. Add a new directory to static/studentpages/ and follow strictly the naming convention:
-    - static/studentpages/[courseID]_[teacherName]/[studentName]_[studentSurname]/...   Where courseID is a number.
+    - static/studentpages/[courseID]\_[teacherName]/[studentName]\_[studentSurname]/...   Where courseID is a number.
     - in the student's directories shall be one file 'index.html' or 'Index.html'. The path to this file is saved as url and linked on the page.
-2. run `npm run generate:links` in cli
+2. run `npm run generate:links` in terminal
 3. deploy by pushing commit to github (it is then deployed on Vercel)
 
 ### What happen's?
@@ -35,6 +31,10 @@ generate-links.js will create or replace two json files in static/studentpages/
   ...
 ]
 ```
+
+# sv
+
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
 ## Developing
 
