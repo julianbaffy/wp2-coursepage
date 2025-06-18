@@ -36,12 +36,14 @@
 
 <Tabs value={group} onValueChange={(e) => (group = e.value)} fluid>
   {#snippet list()}
-    <Tabs.Control value="1">&lt; IF1 BEH &#47; &gt;</Tabs.Control>
-    <Tabs.Control value="2">IF2 BAF</Tabs.Control>
+	{#each data.courses as course}
+		<Tabs.Control value="{course.courseID}">IF{course.courseID} {course.teacher}</Tabs.Control>
+	{/each}
   {/snippet}
   {#snippet content()}
-    <Tabs.Panel value="1"><LinkGrid courseID="1" links={data.links} /></Tabs.Panel>
-    <Tabs.Panel value="2"><LinkGrid courseID="2" links={data.links} /></Tabs.Panel>
+  	{#each data.courses as course}
+    	<Tabs.Panel value="{course.courseID}"><LinkGrid courseID="{course.courseID}" links={data.links} /></Tabs.Panel>
+	{/each}
   {/snippet}
 </Tabs>
 
