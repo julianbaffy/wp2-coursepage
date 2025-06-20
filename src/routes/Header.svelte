@@ -5,6 +5,7 @@
 </script>
 
 <header>
+	<div class="header-container">
 	<div class="corner">
 		<a href="https://www.apostelgymnasium.de/" target="_blank">
 			<img src={logo} alt="Apostelgymnasium" />
@@ -36,10 +37,19 @@
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
+	</div>
 </header>
 
 <style>
-	header {
+	header{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: full;
+	}
+
+	.header-container {
 		display: flex;
 		justify-content: space-between;
 	}
