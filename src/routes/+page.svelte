@@ -1,6 +1,5 @@
 <script lang="ts">
-    import LinkGrid from "$lib/Components/LinkGrid.svelte";
-	import { Tabs } from '@skeletonlabs/skeleton-svelte';
+    import CourseTabs from "$lib/Components/CourseTabs.svelte";
 
 	let { data } : {data: {
 		links: {
@@ -15,8 +14,6 @@
 			teacher: string;
 		}[];}
 	} = $props();
-	
-  	let group = $state('2');
 </script>
 
 <svelte:head>
@@ -34,19 +31,8 @@
 	</h2>
 </section>
 
-<Tabs value={group} onValueChange={(e) => (group = e.value)} fluid>
-  {#snippet list()}
-	{#each data.courses as course}
-		<Tabs.Control value="{course.courseID}">IF{course.courseID} {course.teacher}</Tabs.Control>
-	{/each}
-  {/snippet}
-  {#snippet content()}
-  	{#each data.courses as course}
-    	<Tabs.Panel value="{course.courseID}"><LinkGrid courseID="{course.courseID}" links={data.links} /></Tabs.Panel>
-	{/each}
-  {/snippet}
-</Tabs>
 
+<CourseTabs courses={data.courses} links={data.links} startPosition="2" />
 
 
 <style>
