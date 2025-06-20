@@ -8,7 +8,7 @@
 <div class="app">
 	<Header />
 
-	<div class="flex-grow mt-12">
+	<div class="main-container">
 		<main>
 			{@render children()}
 		</main>
@@ -31,6 +31,13 @@
 		min-height: 100dvh;
 	}
 
+	.main-container{
+		margin-top: 12px;
+		display: flex;
+		flex-grow: 1;
+		flex-direction: column;
+	}
+
 	main {
 		flex: 1;
 		display: flex;
@@ -50,15 +57,5 @@
 		padding: 12px;
 		margin-left: 30px;
 		margin-right: 30px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
 	}
 </style>
