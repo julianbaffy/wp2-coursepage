@@ -1,7 +1,5 @@
 <script lang="ts">
     import CourseTabs from "$lib/Components/CourseTabs.svelte";
-	import LinkGrid from "$lib/Components/LinkGrid.svelte";
-	import { Tabs } from '@skeletonlabs/skeleton-svelte';
 
 	let { data } : {data: {
 		links: {
@@ -16,8 +14,6 @@
 			teacher: string;
 		}[];}
 	} = $props();
-	
-  	let group = $state('2');
 </script>
 
 <svelte:head>

@@ -1,5 +1,6 @@
 <script lang="ts">
     import LinkGrid from "./LinkGrid.svelte";
+    import { onMount } from "svelte";
 
     let {courses, links, startPosition="1" } = $props();
 
@@ -20,21 +21,15 @@
 
 <div class="container w-full">
     <div class="tab-controls w-full flex justify-between">
-        {#each data.courses as course}
-		    <button class="" >IF{course.courseID} {course.teacher}</button>
+        {#each courses as course}
+		    <button class="" onclick={()=>openTab(course.courseID)} >IF{course.courseID} {course.teacher}</button>
 	    {/each}
     </div>
     <div class="tab-content w-full">
         {#each courses as course, i}
-            <div id="{course.courseID}" class="tab-item">
-                <LinkGrid courseID="{course.courseID}" links={data.links} />
+            <div id="{course.courseID}" class="tab-item {currentPosition === course.courseID ? 'block' : 'hidden'}">
+                <LinkGrid courseID="{course.courseID}" links={links} />
             </div>
         {/each}
     </div>
 </div>
-
-
-
-<style>
-
-</style>
