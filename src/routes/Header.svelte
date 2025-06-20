@@ -7,7 +7,7 @@
 <header>
 	<div class="corner">
 		<a href="https://www.apostelgymnasium.de/" target="_blank">
-			<img src={logo} alt="SvelteKit" />
+			<img src={logo} alt="Apostelgymnasium" />
 		</a>
 	</div>
 
