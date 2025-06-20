@@ -47,12 +47,16 @@
 </style>
 
 <div class="grid-container">
-  {#each filteredLinks as link}
-    <a href="{link.url}" target="_blank">
-      <div class="tile">
-        <h3>{link.title}</h3>
-        <p>{link.description}</p>
-      </div>
-    </a>
-  {/each}
+  {#if filteredLinks.length === 0}
+    <p class="text-center mt-8">Für diesen Kurs wurden noch keine Websites veröffentlicht.</p>
+  {:else}
+    {#each filteredLinks as link}
+      <a href="{link.url}" target="_blank">
+        <div class="tile">
+          <h3>{link.title}</h3>
+          <p>{link.description}</p>
+        </div>
+      </a>
+    {/each}
+  {/if}
 </div>
