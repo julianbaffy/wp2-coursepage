@@ -1,7 +1,7 @@
 <script lang="ts">
     import LinkGrid from "./LinkGrid.svelte";
 
-    let {courses, links, startPosition=0 } = $props();
+    let {courses, links, startPosition="1" } = $props();
 
     let currentPosition=$state(startPosition);
 
