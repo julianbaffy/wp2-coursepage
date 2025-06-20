@@ -55,6 +55,7 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 12px;
+		background-color: var(--color-bg-2) 50%;
 		margin-left: 30px;
 		margin-right: 30px;
 	}
