@@ -1,6 +1,5 @@
 <script lang="ts">
     import LinkGrid from "./LinkGrid.svelte";
-    import { onMount } from "svelte";
 
     let {courses, links, startPosition="1" } = $props();
 
