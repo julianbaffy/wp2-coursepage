@@ -36,7 +36,7 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow:
     4px 4px 10px rgba(0, 0, 0, 0.1),  /* standard */
-   -4px -4px 10px rgba(255, 255, 255, 0.7);
+   -2px -2px 10px rgba(255, 255, 255, 0.3);
 
   }
 
