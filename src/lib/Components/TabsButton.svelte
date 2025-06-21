@@ -1,11 +1,23 @@
 <script lang="ts">
     let {courseID, courseTeacher, isActive, openTab } = $props()
 
+    let wasActive = $state(isActive);
+    let justActivated = $state(false);
+
+$effect(() => {
+    if (isActive && !wasActive) {
+        justActivated = true;
+        setTimeout(() => (justActivated = false), 300); // Dauer der Animation
+    }
+    wasActive = isActive;
+    })
+
 </script>
 
 <button
     onclick={() => openTab(courseID)}
-    class="w-full flex justify-center text-center items-center py-1 hover:bg-white/80 transition-all duration-200 {isActive ? 'active' : ''}"
+    class="w-full flex justify-center text-center items-center py-1 hover:bg-white/80 transition-all duration-200
+    {isActive ? 'active' : ''} {justActivated ? 'justActivated' : ''}"
     >
    <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +103,6 @@ button:hover:not(.active) .rightBracket {
 /* ----- ACTIVE: Bleibt dauerhaft geslidet ----- */
 button.active .leftBracket {
 	transform: translateX(-10px);
-    animation: none;
 }
 button.active .rightBracket {
 	transform: translateX(10px);
@@ -104,5 +115,13 @@ button:not(:hover):not(.active) .leftBracket {
 }
 button:not(:hover):not(.active) .rightBracket {
 	animation: slideRightIn 0.2s ease forwards;
+}
+
+
+button.justActivated .leftBracket {
+	animation: slideLeftOut 0.3s ease forwards;
+}
+button.justActivated .rightBracket {
+	animation: slideRightOut 0.3s ease forwards;
 }
 </style>
