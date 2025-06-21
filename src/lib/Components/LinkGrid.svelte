@@ -1,5 +1,5 @@
  <script lang="ts">
-  
+  import ArrowToIcon from "$lib/images/ArrowToIcon.svelte";
    let {courseID = "1", links} : {courseID: string, links: {
     courseID: string;
     teacher: string;
@@ -23,12 +23,21 @@
   }
 
   .tile {
-    background-color: #f1f1f1;
+    background-color: rgba(255, 255, 255, 0.4); /* statt opacity */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px); /* für Safari */
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow:
+    4px 4px 10px rgba(0, 0, 0, 0.1),  /* standard */
+   -4px -4px 10px rgba(255, 255, 255, 0.7);
+
   }
 
   .tile:hover {
@@ -37,7 +46,7 @@
   }
 
   .tile h3 {
-    margin-bottom: 10px;
+    margin: 6px;
   }
 
   .tile p {
@@ -54,7 +63,10 @@
       <a href="{link.url}" target="_blank">
         <div class="tile">
           <h3>{link.title}</h3>
-          <p>{link.description}</p>
+          {#if link.description}
+            <p>{link.description}</p>
+          {/if}
+          <div class="absolute top-2 right-2 opacity-50 hover:opacity-100"><ArrowToIcon/></div>
         </div>
       </a>
     {/each}
