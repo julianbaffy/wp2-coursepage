@@ -59,18 +59,18 @@
 <style>
 @keyframes slideLeftOut {
 	from { transform: translateX(0); }
-	to   { transform: translateX(-8px); }
+	to   { transform: translateX(-10px); }
 }
 @keyframes slideLeftIn {
-	from { transform: translateX(-8px); }
+	from { transform: translateX(-10px); }
 	to   { transform: translateX(0); }
 }
 @keyframes slideRightOut {
 	from { transform: translateX(0); }
-	to   { transform: translateX(8px); }
+	to   { transform: translateX(10px); }
 }
 @keyframes slideRightIn {
-	from { transform: translateX(8px); }
+	from { transform: translateX(10px); }
 	to   { transform: translateX(0); }
 }
 
@@ -90,11 +90,11 @@ button:hover:not(.active) .rightBracket {
 
 /* ----- ACTIVE: Bleibt dauerhaft geslidet ----- */
 button.active .leftBracket {
-	transform: translateX(-8px);
+	transform: translateX(-10px);
     animation: none;
 }
 button.active .rightBracket {
-	transform: translateX(8px);
+	transform: translateX(10px);
     animation: none;
 }
 
