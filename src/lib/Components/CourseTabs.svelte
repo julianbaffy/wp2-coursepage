@@ -25,7 +25,7 @@
 <div class="tab-container w-full mt-8">
     <div class="tab-controls w-full flex relative pb-4">
 		{#each courses as course}
-			<div class="button-container w-full text-center py-2 border-gray-400 {currentPosition === course.courseID ? 'border-x border-t rounded-t-[8px] hover:bg-gradient-to-b hover:from-white hover:to-transparent' : 'border-b-1 hover:bg-gradient-to-t hover:from-white hover:to-transparent'} transition-opacity duration-200">
+			<div class="button-container w-full text-center py-2 border-gray-400 {currentPosition === course.courseID ? 'border-x border-t rounded-t-[8px] bg-gradient-to-b from-white to-transparent' : 'border-b-1 hover:bg-gradient-to-t hover:from-white hover:to-transparent'} transition-opacity duration-200">
                 <TabsButton courseID={course.courseID} courseTeacher={course.teacher} isActive={currentPosition === course.courseID} openTab={openTab} />
             </div>
 		{/each}
