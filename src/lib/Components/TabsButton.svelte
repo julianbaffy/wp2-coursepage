@@ -16,8 +16,8 @@ $effect(() => {
 
 <button
     onclick={() => openTab(courseID)}
-    class="w-full flex justify-center text-center items-center py-1 hover:bg-white/80 transition-all duration-200
-    {isActive ? 'active' : ''} {justActivated ? 'justActivated' : ''}"
+    class="w-full flex justify-center text-center items-center py-1 hover:bg-white/80 hover:opacity-100 transition-all duration-200
+    {isActive ? 'active opacity-100' : 'opacity-50'} {justActivated ? 'justActivated' : ''}"
     >
    <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -70,8 +70,10 @@ $effect(() => {
 
 <style>
 @keyframes slideLeftOut {
-	from { transform: translateX(0); }
-	to   { transform: translateX(-10px); }
+	from { transform: translateX(0);
+            opacity: 50%; }
+	to   { transform: translateX(-10px);
+            opacity: 100%; }
 }
 @keyframes slideLeftIn {
 	from { transform: translateX(-10px); }
@@ -90,6 +92,7 @@ $effect(() => {
 .leftBracket,
 .rightBracket {
 	transform: translateX(0);
+    opacity: 50;
 }
 
 /* ----- HOVER: Nur wenn NICHT aktiv ----- */
@@ -103,9 +106,11 @@ button:hover:not(.active) .rightBracket {
 /* ----- ACTIVE: Bleibt dauerhaft geslidet ----- */
 button.active .leftBracket {
 	transform: translateX(-10px);
+    opacity: 100%;
 }
 button.active .rightBracket {
 	transform: translateX(10px);
+    opacity: 100%;
     animation: none;
 }
 
