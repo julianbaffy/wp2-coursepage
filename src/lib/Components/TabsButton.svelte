@@ -16,16 +16,16 @@ $effect(() => {
 
 <button
     onclick={() => openTab(courseID)}
-    class="w-full flex justify-center text-center items-center py-1 hover:bg-white/80 hover:opacity-100 transition-all duration-200
+    class="w-full -my-3 flex justify-center text-center items-center hover:opacity-100 transition-all duration-200
     {isActive ? 'active opacity-100' : 'opacity-50'} {justActivated ? 'justActivated' : ''}"
     >
    <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 100 100"
-                stroke-width="12"
+                stroke-width="10"
                 stroke="currentColor"
-                class="w-[12px] h-[12px] leftBracket {isActive ? 'slide-out' : 'slide-in'}"
+                class="w-[14px] h-[14px] leftBracket {isActive ? 'slide-out' : 'slide-in'}"
                 stroke-linecap="round"
                 stroke-linejoin="round"
             >           
@@ -42,14 +42,20 @@ $effect(() => {
                 />
             </svg>
             
-            <span class="mx-2">IF{courseID} {courseTeacher} </span>
+            <div class="button-content">
+                <div class="left-column">
+                    <span class="if">IF</span>
+                    <span class="teacher">{courseTeacher}</span>
+                </div>
+                <span class="course-id" data-active={isActive}>{courseID}</span>
+            </div>
 <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 100 100"
-                stroke-width="12"
+                stroke-width="10"
                 stroke="currentColor"
-                class="w-[12px] h-[12px] rightBracket {isActive ? 'slide-out' : 'slide-in'}"
+                class="w-[14px] h-[14px] rightBracket {isActive ? 'slide-out' : 'slide-in'}"
                 stroke-linecap="round"
                 stroke-linejoin="round"
             >           
@@ -69,6 +75,51 @@ $effect(() => {
 </button>
 
 <style>
+
+.button-content{
+    margin-left: 8px;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    gap: 8px;
+    font-family:'Courier New', Courier, monospace ;
+}
+
+.left-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+.if{
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.teacher{
+    font-size: 10;
+    line-height: 0.9;
+}
+
+.course-id {
+  font-size: 51px;
+  transform: translateY(4px);
+  font-weight: 600;
+  color: inherit;
+  opacity: 1;
+}
+
+button:hover .course-id,
+.course-id[data-active="true"] {
+  color: var(--color-theme-1);
+  opacity: 0.75;
+  transition: color 0.3s ease
+}
+
 @keyframes slideLeftOut {
 	from { transform: translateX(0);
             opacity: 50%; }
