@@ -6,15 +6,18 @@
 
     let currentPosition=$state(startPosition);
 
-    function openTab(id){
+    function openTab(id: string){
         currentPosition=id;
         var i;
         var i;
-        var x = document.getElementsByClassName("tab-item");
+        var x = document.getElementsByClassName("tab-item") as HTMLCollectionOf<HTMLElement>;
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "none";
         }
-        document.getElementById(id).style.display = "block"; 
+        const el = document.getElementById(id);
+        if (el) {
+            el.style.display = "block";
+        }
     }
 </script>
 
