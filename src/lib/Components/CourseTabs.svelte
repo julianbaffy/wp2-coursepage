@@ -50,7 +50,7 @@
 </script>
 
 
-<div class="tab-container relative w-full">
+<div class="tab-container w-full">
     <div bind:this={sentinel} class="h-1"></div>
     <div class:stuck={isSticky} class="tab-controls sticky top-14 w-full flex relative pb-4 z-20">
 		{#each courses as course}
@@ -86,10 +86,5 @@
 
     .tab-controls.stuck::before{
         top: -3.5em;
-    }
-
-    .tab-container{
-        overflow-x: hidden;
-	    position: relative;
     }
 </style>
