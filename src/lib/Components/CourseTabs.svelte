@@ -52,7 +52,7 @@
 
 <div class="tab-container w-full mt-14">
     <div bind:this={sentinel} class="h-1"></div>
-    <div class:stuck={isSticky} class="tab-controls sticky top-14 w-full flex relative pb-4 z-20">
+    <div class:stuck={isSticky} class="tab-controls sticky top-14 w-full h-auto flex relative pb-4 z-20">
 		{#each courses as course}
 			<div class="button-container w-full text-center py-4 border-gray-400 {currentPosition === course.courseID ? 'border-x border-t rounded-t-[8px] bg-gradient-to-b from-white to-transparent' : 'border-b-1 hover:bg-gradient-to-t hover:from-white hover:to-transparent'} transition-opacity duration-200">
                 <TabsButton courseID={course.courseID} courseTeacher={course.teacher} isActive={currentPosition === course.courseID} openTab={openTab} />
