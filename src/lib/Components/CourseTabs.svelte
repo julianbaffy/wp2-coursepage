@@ -87,4 +87,9 @@
     .tab-controls.stuck::before{
         top: -3.5em;
     }
+
+    .tab-controls{
+        overflow-x: hidden;
+    }
+
 </style>
