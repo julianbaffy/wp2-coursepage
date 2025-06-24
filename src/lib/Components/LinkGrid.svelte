@@ -18,8 +18,8 @@
   .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    gap: 1.25em;
+    padding: 1.25em;
   }
 
   .tile {
@@ -31,22 +31,22 @@
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px); /* für Safari */
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: 0.5em;
+    padding: 1.17em;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow:
-    4px 4px 10px rgba(0, 0, 0, 0.1),  /* standard */
-   -2px -2px 10px rgba(255, 255, 255, 0.3);
+    0.235em 0.235em 0.588em rgba(0, 0, 0, 0.1),  /* standard */
+   -0.235em -0.235em 0.588em rgba(255, 255, 255, 0.3);
     font-size: 17px;
   }
 
   .tile:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-0.3em);
+    box-shadow: 0 0.471em 0.706em rgba(0, 0, 0, 0.15);
   }
 
   .tile h3 {
-    margin: 6px;
+    margin: 0.353em;
   }
 
   .tile p {

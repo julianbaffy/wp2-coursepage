@@ -1,4 +1,5 @@
 <script lang="ts">
+    
     import LinkGrid from "./LinkGrid.svelte";
     import TabsButton from "./TabsButton.svelte";
 
@@ -38,9 +39,3 @@
         {/each}
     </div>
 </div>
-
-<style>
-    .background-active{
-
-    }
-</style>

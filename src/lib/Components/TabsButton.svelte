@@ -97,7 +97,6 @@ $effect(() => {
 .if{
     font-size: 24px;
     line-height: 1;
-    font-weight: 500;
 }
 
 .teacher{
@@ -107,8 +106,8 @@ $effect(() => {
 
 .course-id {
   font-size: 51px;
-  transform: translateY(4px);
-  font-weight: 600;
+  transform: translateY(0.05em);
+  font-weight: bold;
   color: inherit;
   opacity: 1;
 }
@@ -117,25 +116,25 @@ button:hover .course-id,
 .course-id[data-active="true"] {
   color: var(--color-theme-1);
   opacity: 0.75;
-  transition: color 0.3s ease
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 @keyframes slideLeftOut {
 	from { transform: translateX(0);
             opacity: 50%; }
-	to   { transform: translateX(-10px);
+	to   { transform: translateX(-0.625em);
             opacity: 100%; }
 }
 @keyframes slideLeftIn {
-	from { transform: translateX(-10px); }
+	from { transform: translateX(-0.625em); }
 	to   { transform: translateX(0); }
 }
 @keyframes slideRightOut {
 	from { transform: translateX(0); }
-	to   { transform: translateX(10px); }
+	to   { transform: translateX(0.625em); }
 }
 @keyframes slideRightIn {
-	from { transform: translateX(10px); }
+	from { transform: translateX(0.625em); }
 	to   { transform: translateX(0); }
 }
 
@@ -156,11 +155,11 @@ button:hover:not(.active) .rightBracket {
 
 /* ----- ACTIVE: Bleibt dauerhaft geslidet ----- */
 button.active .leftBracket {
-	transform: translateX(-10px);
+	transform: translateX(-0.625em);
     opacity: 100%;
 }
 button.active .rightBracket {
-	transform: translateX(10px);
+	transform: translateX(0.625em);
     opacity: 100%;
     animation: none;
 }
