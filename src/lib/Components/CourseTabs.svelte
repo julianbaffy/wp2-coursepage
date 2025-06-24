@@ -50,7 +50,7 @@
 </script>
 
 
-<div class="tab-container relative w-full mt-4">
+<div class="tab-container relative w-full">
     <div bind:this={sentinel} class="h-1"></div>
     <div class:stuck={isSticky} class="tab-controls sticky top-14 w-full flex relative pb-4 z-20">
 		{#each courses as course}
