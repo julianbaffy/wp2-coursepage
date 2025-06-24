@@ -55,7 +55,7 @@
   }
 </style>
 
-<div class="grid-container mt-6">
+<div class="grid-container">
   {#if filteredLinks.length === 0}
     <p class="text-center mt-10">Für diesen Kurs wurden noch keine Websites veröffentlicht.</p>
   {:else}
