@@ -9,6 +9,8 @@
     let currentPosition=$state(startPosition);
 
     function openTab(id: string){
+        const scrollY = window.scrollY;
+
         currentPosition=id;
         var i;
         var i;
@@ -20,6 +22,9 @@
         if (el) {
             el.style.display = "block";
         }
+
+        //Scrollposiotion wieder herstellen
+        requestAnimationFrame(() => window.scrollTo({ top: scrollY }));
     }
 
     // Intersection-Observer for tab-controls sentinel
@@ -56,7 +61,7 @@
 	</div>
     <div class="tab-content w-full">
         {#each courses as course, i}
-            <div id={course.courseID} class="tab-item {currentPosition === course.courseID ? 'block' : 'hidden'}">
+            <div id={course.courseID} class="tab-item min-h-[50dvh] {currentPosition === course.courseID ? 'block' : 'hidden'}">
                 <LinkGrid courseID={course.courseID} links={links} />
             </div>
         {/each}
@@ -81,5 +86,9 @@
 
     .tab-controls.stuck::before{
         top: -3.5em;
+    }
+
+    .tab-content {
+	overflow-anchor: none;
     }
 </style>
