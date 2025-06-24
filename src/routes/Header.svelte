@@ -44,6 +44,8 @@
 		left: 0;
 		right: 0;
 		width: full;
+		z-index: 50;
+		padding-bottom: 1em;
 	}
 
 	.header-container {
