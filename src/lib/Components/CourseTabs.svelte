@@ -50,7 +50,7 @@
 </script>
 
 
-<div class="tab-container relative w-full mt-8">
+<div class="tab-container relative w-full mt-6">
     <div bind:this={sentinel} class="h-1"></div>
     <div class:stuck={isSticky} class="tab-controls sticky top-14 w-full flex relative pb-4 z-20">
 		{#each courses as course}
@@ -61,7 +61,7 @@
 	</div>
     <div class="tab-content w-full">
         {#each courses as course, i}
-            <div id={course.courseID} class="tab-item {currentPosition === course.courseID ? 'block' : 'hidden'}">
+            <div id={course.courseID} class="tab-item mt-12 {currentPosition === course.courseID ? 'block' : 'hidden'}">
                 <LinkGrid courseID={course.courseID} links={links} />
             </div>
         {/each}
