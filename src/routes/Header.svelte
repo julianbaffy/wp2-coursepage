@@ -43,7 +43,7 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		width: full;
+		width: 100%;
 		z-index: 50;
 		padding-bottom: 1em;
 	}

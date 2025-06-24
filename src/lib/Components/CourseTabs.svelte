@@ -88,7 +88,8 @@
         top: -3.5em;
     }
 
-    .tab-content {
-	overflow-anchor: none;
+    .tab-container{
+        overflow-x: hidden;
+	    position: relative;
     }
 </style>
