@@ -76,6 +76,8 @@ $effect(() => {
 
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
 .button-content{
     margin-left: 8px;
     margin-right: 8px;
@@ -84,7 +86,7 @@ $effect(() => {
     align-items: center;
     width: 75px;
     gap: 8px;
-    font-family:'Courier New', Courier, monospace ;
+    font-family: 'Source Code Pro', monospace;
 }
 
 .left-column{
@@ -106,10 +108,11 @@ $effect(() => {
 
 .course-id {
   font-size: 51px;
-  transform: translateY(0.05em);
-  font-weight: bold;
-  color: inherit;
-  opacity: 1;
+  font-weight: 700;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+  opacity: 0.8;
 }
 
 button:hover .course-id,
