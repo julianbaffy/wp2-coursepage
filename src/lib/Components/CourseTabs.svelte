@@ -61,7 +61,7 @@
 	</div>
     <div class="tab-content w-full">
         {#each courses as course, i}
-            <div id={course.courseID} class="tab-item min-h-[50dvh] {currentPosition === course.courseID ? 'block' : 'hidden'}">
+            <div id={course.courseID} class="tab-item {currentPosition === course.courseID ? 'block' : 'hidden'}">
                 <LinkGrid courseID={course.courseID} links={links} />
             </div>
         {/each}
