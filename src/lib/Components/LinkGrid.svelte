@@ -57,7 +57,7 @@
 
 <div class="grid-container">
   {#if filteredLinks.length === 0}
-    <p class="text-center mt-8">Für diesen Kurs wurden noch keine Websites veröffentlicht.</p>
+    <p class="text-center mt-10">Für diesen Kurs wurden noch keine Websites veröffentlicht.</p>
   {:else}
     {#each filteredLinks as link}
       <a href="{link.url}" target="_blank">
