@@ -4,10 +4,21 @@
     import TabsButton from "./TabsButton.svelte";
     import { onMount } from "svelte";
     import type { Link } from '$lib/types/customTypes';
+    import { page } from "$app/state";
+    import { goto } from "$app/navigation";
 
     let {courses, links, startPosition='auto', smallButtons=false } = $props();
 
-    let currentPosition=$state('1'); //'auto' or any courseID
+    let currentPosition=$state(page.url.searchParams.get('course') || '1');
+
+    function updateSearchParams(courseID: string){
+        const params = new URLSearchParams(page.url.searchParams);
+        params.set('course', courseID);
+
+        const newUrl = `${page.url.pathname}?${params.toString()}`;
+
+        goto(newUrl, { replaceState: true, keepFocus: true, noScroll: true });
+    }
 
     function openTab(id: string){
         const scrollY = window.scrollY;
@@ -26,6 +37,7 @@
 
         //Scrollposiotion wieder herstellen
         requestAnimationFrame(() => window.scrollTo({ top: scrollY }));
+        updateSearchParams(id);
     }
     
     // Intersection-Observer for tab-controls sentinel
