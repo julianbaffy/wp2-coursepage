@@ -208,16 +208,13 @@ button.smallButtons .button-content {
     margin-right: 0px;
 }
 
-button.smallButtons .if {
-    font-size: 16px;
-}
 
 button.smallButtons .teacher {
-    font-size: 8px;
+    display: none;
 }
 
 button.smallButtons .course-id {
-    font-size: 36px;
+    font-size: 32px;
 }
 
 button.smallButtons .leftBracket,
