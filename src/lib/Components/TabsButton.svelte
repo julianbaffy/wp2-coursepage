@@ -16,8 +16,8 @@ $effect(() => {
 
 <button
     onclick={() => openTab(courseID)}
-    class="w-full -my-3 flex justify-center text-center items-center hover:opacity-100 transition-all duration-200
-    {isActive ? 'active opacity-100' : 'opacity-50'} {justActivated ? 'justActivated' : ''}"
+    class="w-full -my-3 flex justify-center text-center items-center transition-all duration-200
+    {isActive ? 'active' : ''} {justActivated ? 'justActivated' : ''}"
     >
    <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -118,8 +118,23 @@ $effect(() => {
 button:hover .course-id,
 .course-id[data-active="true"] {
   color: var(--color-theme-1);
-  opacity: 0.75;
+  opacity: 0.8;
   transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+button:hover:not(.active) .course-id{
+    color: var(--color-theme-1);
+    opacity: 0.7;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+button:hover:not(.active) {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.active{
+    opacity: 1;
 }
 
 @keyframes slideLeftOut {
@@ -151,6 +166,7 @@ button:hover .course-id,
 /* ----- HOVER: Nur wenn NICHT aktiv ----- */
 button:hover:not(.active) .leftBracket {
 	animation: slideLeftOut 0.3s ease forwards;
+    opacity: 75;
 }
 button:hover:not(.active) .rightBracket {
 	animation: slideRightOut 0.3s ease forwards;
