@@ -6,5 +6,13 @@
   {
     "courseID": "2",
     "teacher": "BAF"
+  },
+  {
+    "courseID": "3",
+    "teacher": "BUG"
+  },
+  {
+    "courseID": "4",
+    "teacher": "JND"
   }
 ]
