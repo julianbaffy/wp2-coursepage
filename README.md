@@ -1,4 +1,13 @@
 # Manage courses and student's pages
+
+## Open Tabs
+By default CourseTabs will open the first non-empty course or the first course, if all are empty. You can change that, by setting the "startPosition" for the CourseTabs component in src/routes/+page.svelte. This ist not recommended. If you just want a specific tab to be open when sharing the page, this is handeled by the searchParams which are set by opening a tab. (e. a. .../course=2).
+
+## Limits
+The Layout has breakpoints to make it work on all devices for up to 4 courses. 5 Courses still work on big and medium large screens.
+
+There is no limit to the amount of student's pages whithin a course.
+
 ## Adding new Studentpages and Courses
 
 1. Add a new directory to static/studentpages/ and follow strictly the naming convention:
@@ -32,11 +41,6 @@ generate-links.js will create or replace two json files in static/studentpages/
   ...
 ]
 ```
-
-## Limits
-The Layout has breakpoints to ensure the layout to work on all devices for up to 4 courses. 5 Courses still work on big and medium large screens.
-
-There is no limit to the amount of student's pages whithin a course.
 
 # sv
 
