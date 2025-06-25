@@ -5,7 +5,7 @@
     import { onMount } from "svelte";
     import type { Link } from '$lib/types/customTypes';
 
-    let {courses, links, startPosition='auto' } = $props();
+    let {courses, links, startPosition='auto', smallButtons=false } = $props();
 
     let currentPosition=$state(''); //'auto' or any courseID
 
@@ -27,11 +27,7 @@
         //Scrollposiotion wieder herstellen
         requestAnimationFrame(() => window.scrollTo({ top: scrollY }));
     }
-
-    //small buttons if:
-    // 4 Courses and window <700px
-    // 3 Courses and window <
-
+    
     // Intersection-Observer for tab-controls sentinel
 
     let sentinel: HTMLDivElement;
@@ -39,6 +35,7 @@
 
 	// Intersection Observer einrichten
 	onMount(() => {
+        //set startposition on first non-empty course
         if (startPosition === 'auto' && links && courses) {
             for (let course of courses) {
                 if (links.some((link: Link) => link.courseID === course.courseID)) {
@@ -71,7 +68,7 @@
     <div class:stuck={isSticky} class="tab-controls sticky top-14 w-full h-auto flex relative pb-4 z-20">
 		{#each courses as course}
 			<div class="button-container w-full text-center py-4 border-gray-400 {currentPosition === course.courseID ? 'border-x border-t rounded-t-[8px] bg-gradient-to-b from-white to-transparent' : 'border-b-1 hover:bg-gradient-to-t hover:from-white hover:to-transparent'} transition-opacity duration-200">
-                <TabsButton courseID={course.courseID} courseTeacher={course.teacher} isActive={currentPosition === course.courseID} openTab={openTab} />
+                <TabsButton courseID={course.courseID} courseTeacher={course.teacher} isActive={currentPosition === course.courseID} smallButtons={smallButtons} openTab={openTab} />
             </div>
 		{/each}
 	</div>

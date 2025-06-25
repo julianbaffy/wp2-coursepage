@@ -1,6 +1,8 @@
 <script lang="ts">
     import CourseTabs from "$lib/Components/CourseTabs.svelte";
-
+	import { onMount } from "svelte";
+	import type { Course, Link } from "$lib/types/customTypes";
+	
 	let { data } : {data: {
 		links: {
 			courseID: string;
@@ -14,6 +16,21 @@
 			teacher: string;
 		}[];}
 	} = $props();
+
+	let width = $state(0);
+
+	function updateSize() {
+    	width = window.innerWidth;
+  	}
+
+	onMount(() => {
+		window.scrollTo(0, 0);
+		updateSize();
+		window.addEventListener("resize", updateSize);
+		return () => window.removeEventListener("resize", updateSize);
+	});
+
+	let smallButtons = $derived(width<700 && data.courses.length>=4 || width<540 && data.courses.length>=3);
 </script>
 
 <svelte:head>
@@ -31,7 +48,7 @@
 	</h2>
 </section>
 
-<CourseTabs courses={data.courses} links={data.links} startPosition='auto' />
+<CourseTabs courses={data.courses} links={data.links} startPosition='auto' smallButtons={smallButtons} />
 
 <style>
 	section {

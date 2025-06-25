@@ -1,5 +1,5 @@
 <script lang="ts">
-    let {courseID, courseTeacher, isActive, openTab } = $props()
+    let {courseID, courseTeacher, isActive, smallButtons, openTab }= $props()
 
     let wasActive = $state(isActive);
     let justActivated = $state(false);
@@ -17,7 +17,7 @@ $effect(() => {
 <button
     onclick={() => openTab(courseID)}
     class="w-full -my-3 flex justify-center text-center items-center transition-all duration-200
-    {isActive ? 'active' : ''} {justActivated ? 'justActivated' : ''}"
+    {isActive ? 'active' : ''} {justActivated ? 'justActivated' : ''} {smallButtons ? 'smallButtons' : ''}"
     >
    <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -198,4 +198,85 @@ button.justActivated .leftBracket {
 button.justActivated .rightBracket {
 	animation: slideRightOut 0.3s ease forwards;
 }
+
+/* small Buttons */
+
+button.smallButtons .button-content {
+    width: 60px;
+    gap: 4px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+button.smallButtons .if {
+    font-size: 16px;
+}
+
+button.smallButtons .teacher {
+    font-size: 8px;
+}
+
+button.smallButtons .course-id {
+    font-size: 36px;
+}
+
+button.smallButtons .leftBracket,
+button.smallButtons .rightBracket {
+    width: 10px;
+    height: 10px;
+}
+
+/* animations for small Buttons */
+
+@keyframes slideLeftOutSmall {
+	from { transform: translateX(0);
+            opacity: 50%; }
+	to   { transform: translateX(-0.4em);
+            opacity: 100%; }
+}
+@keyframes slideLeftInSmall {
+	from { transform: translateX(-0.3em); }
+	to   { transform: translateX(0); }
+}
+@keyframes slideRightOutSmall {
+	from { transform: translateX(0); }
+	to   { transform: translateX(0.3em); }
+}
+@keyframes slideRightInSmall {
+	from { transform: translateX(0.3em); }
+	to   { transform: translateX(0); }
+}
+
+/* Hover bei smallButtons */
+button.smallButtons:hover:not(.active) .leftBracket {
+    animation: slideLeftOutSmall 0.3s ease forwards;
+}
+button.smallButtons:hover:not(.active) .rightBracket {
+    animation: slideRightOutSmall 0.3s ease forwards;
+}
+
+/* Rückanimation */
+button.smallButtons:not(:hover):not(.active) .leftBracket {
+    animation: slideLeftInSmall 0.2s ease forwards;
+}
+button.smallButtons:not(:hover):not(.active) .rightBracket {
+    animation: slideRightInSmall 0.2s ease forwards;
+}
+
+/* Wenn aktiviert (direkt nach Click) */
+button.smallButtons.justActivated .leftBracket {
+    animation: slideLeftOutSmall 0.3s ease forwards;
+}
+button.smallButtons.justActivated .rightBracket {
+    animation: slideRightOutSmall 0.3s ease forwards;
+}
+
+/* Aktiv-Zustand bei smallButtons */
+button.smallButtons.active .leftBracket {
+	transform: translateX(-0.3em);
+}
+button.smallButtons.active .rightBracket {
+	transform: translateX(0.3em);
+}
+
 </style>
