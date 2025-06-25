@@ -47,29 +47,41 @@
 
 	// Intersection Observer einrichten
 	onMount(() => {
-        const params = new URLSearchParams(window.location.search);
-        const param = params.get('course');
-        if (param) {
-            currentPosition = param;
+        let resolved = false;
+
+        // 1. StartPosition aus Props
+        if (startPosition !== 'auto') {
+            currentPosition = startPosition;
+            openTab(startPosition);
+            resolved = true;
         }
-
-        const hasCourseParam = page.url.searchParams.has('course');
-
-        //set startposition on first non-empty course or on the first, if all are empty.
-        if (!hasCourseParam) {
-            if (startPosition === 'auto' && courses.length > 0 && links.length > 0) {
+        
+        // 2. Wenn es einen searchParam gibt
+        if (!resolved) {
+            const params = new URLSearchParams(window.location.search);
+            const param = params.get('course');
+            if (param) {
+                currentPosition = param;
+                openTab(param);
+                resolved = true;
+            }
+        }
+        
+        // 3. Erster nicht-leerer Kurs
+            if (!resolved && courses.length > 0 && links.length > 0) {
                 for (let course of courses) {
                     if (links.some((link: Link) => link.courseID === course.courseID)) {
                         currentPosition = course.courseID;
                         openTab(course.courseID);
+                        resolved = true;
                         break;
                     }
                 }
-            } else {
-                currentPosition = startPosition;
-                openTab(startPosition);
             }
-        } else {
+        
+         // 4. Fallback: erster Kurs
+        if (!resolved && courses.length > 0) {
+            currentPosition = courses[0].courseID;
             openTab(currentPosition);
         }
 
