@@ -3,19 +3,7 @@
 	import { onMount } from "svelte";
 	import type { Course, Link } from "$lib/types/customTypes";
 	
-	let { data } : {data: {
-		links: {
-			courseID: string;
-			teacher: string;
-			title: string;
-			url: string;
-			description: string;
-		}[],
-		courses: {
-			courseID: string;
-			teacher: string;
-		}[];}
-	} = $props();
+	let { data } : {data: { links: Link[], courses: Course[];}} = $props();
 
 	let width = $state(0);
 
