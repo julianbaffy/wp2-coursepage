@@ -9,7 +9,7 @@
 
     let {courses, links, startPosition='auto', smallButtons=false } = $props();
 
-    let currentPosition=$state(page.url.searchParams.get('course') || '1');
+    let currentPosition=$state('1');
 
     function updateSearchParams(courseID: string){
         const params = new URLSearchParams(page.url.searchParams);
@@ -47,8 +47,14 @@
 
 	// Intersection Observer einrichten
 	onMount(() => {
+        const params = new URLSearchParams(window.location.search);
+        const param = params.get('course');
+        if (param) {
+            currentPosition = param;
+        }
+
         const hasCourseParam = page.url.searchParams.has('course');
-        
+
         //set startposition on first non-empty course or on the first, if all are empty.
         if (!hasCourseParam) {
             if (startPosition === 'auto' && courses.length > 0 && links.length > 0) {
