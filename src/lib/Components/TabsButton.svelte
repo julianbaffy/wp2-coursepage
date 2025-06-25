@@ -223,6 +223,14 @@ button.smallButtons .rightBracket {
     height: 10px;
 }
 
+@media (max-width: 420px) {
+  button .leftBracket,
+  button .rightBracket {
+    display: none;
+  }
+}
+
+
 /* animations for small Buttons */
 
 @keyframes slideLeftOutSmall {
