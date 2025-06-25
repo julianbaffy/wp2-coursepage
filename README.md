@@ -1,3 +1,9 @@
+# About
+
+I created this homepage to display the products of a project my students worked on. they created Websites with HTML and CSS files which are provided in the static directory of this repository. Although I use Tailwind CSS in some snppets, I tried to stick to pure CSS to make it accessible for the students.
+
+The Websites are linked in a grid in the frontpage, which is organised in tabs for different courses.
+
 # Manage courses and student's pages
 
 ## Open Tabs
@@ -12,7 +18,7 @@ There is no limit to the amount of student's pages whithin a course.
 
 1. Add a new directory to static/studentpages/ and follow strictly the naming convention:
     - static/studentpages/[courseID]\_[teacherName]/[studentName]\_[studentSurname]/...   Where courseID is a number.
-    - in the student's directories shall be one file 'index.html' or 'Index.html'. The path to this file is saved as url and linked on the page.
+    - in the student's directories shall be one file 'index.html' or 'Index.html'. The path to this file is saved as url and linked on the page. That ist the 'home'-page for the students website.
 2. run `npm run generate:links` in terminal
 3. deploy by pushing commit to github (it is then deployed on Vercel)
 
