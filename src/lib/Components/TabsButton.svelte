@@ -224,8 +224,8 @@ button.smallButtons .rightBracket {
 }
 
 @media (max-width: 420px) {
-  button .leftBracket,
-  button .rightBracket {
+  button.smallButtons .leftBracket,
+  button.smallButtons .rightBracket {
     display: none;
   }
 }
