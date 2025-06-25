@@ -19,7 +19,7 @@ There is no limit to the amount of student's pages whithin a course.
 ### What happen's?
 generate-links.js will create or replace two json files in static/studentpages/
 1. 'courses.json', which looks like this:
-```
+```json
 [
   {
     "courseID": "1",
@@ -30,7 +30,7 @@ generate-links.js will create or replace two json files in static/studentpages/
 ```
 
 2. 'links.json', which looks like this:
-```
+```json
 [
   {
     "courseID": "1",
