@@ -47,9 +47,11 @@
 
 	// Intersection Observer einrichten
 	onMount(() => {
+        const hasCourseParam = page.url.searchParams.has('course');
+        
         //set startposition on first non-empty course or on the first, if all are empty.
-        if (links.length > 0 && courses.length > 0) {
-            if (startPosition === 'auto') {
+        if (!hasCourseParam) {
+            if (startPosition === 'auto' && courses.length > 0 && links.length > 0) {
                 for (let course of courses) {
                     if (links.some((link: Link) => link.courseID === course.courseID)) {
                         currentPosition = course.courseID;
@@ -62,9 +64,7 @@
                 openTab(startPosition);
             }
         } else {
-            // Fallback, wenn alles leer ist
-            currentPosition = '1';
-            openTab('1');
+            openTab(currentPosition);
         }
 
 		const observer = new IntersectionObserver(
