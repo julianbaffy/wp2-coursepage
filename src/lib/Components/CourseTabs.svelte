@@ -3,10 +3,11 @@
     import LinkGrid from "./LinkGrid.svelte";
     import TabsButton from "./TabsButton.svelte";
     import { onMount } from "svelte";
+    import type { Link } from '$lib/types/customTypes';
 
-    let {courses, links, startPosition="1" } = $props();
+    let {courses, links, startPosition='auto' } = $props();
 
-    let currentPosition=$state(startPosition);
+    let currentPosition=$state(''); //'auto' or any courseID
 
     function openTab(id: string){
         const scrollY = window.scrollY;
@@ -27,6 +28,10 @@
         requestAnimationFrame(() => window.scrollTo({ top: scrollY }));
     }
 
+    //small buttons if:
+    // 4 Courses and window <700px
+    // 3 Courses and window <
+
     // Intersection-Observer for tab-controls sentinel
 
     let sentinel: HTMLDivElement;
@@ -34,6 +39,17 @@
 
 	// Intersection Observer einrichten
 	onMount(() => {
+        if (startPosition === 'auto' && links && courses) {
+            for (let course of courses) {
+                if (links.some((link: Link) => link.courseID === course.courseID)) {
+                    currentPosition = course.courseID;
+                    break;
+                }
+            }
+        } else {
+            currentPosition = startPosition;
+        }
+
 		const observer = new IntersectionObserver(
 			([entry]) => {
 				isSticky = !entry.isIntersecting;

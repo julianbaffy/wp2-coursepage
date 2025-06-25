@@ -31,7 +31,7 @@
 	</h2>
 </section>
 
-<CourseTabs courses={data.courses} links={data.links} startPosition="2" />
+<CourseTabs courses={data.courses} links={data.links} startPosition='auto' />
 
 <style>
 	section {
