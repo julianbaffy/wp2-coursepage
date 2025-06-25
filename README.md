@@ -1,3 +1,4 @@
+# Manage courses and student's pages
 ## Adding new Studentpages and Courses
 
 1. Add a new directory to static/studentpages/ and follow strictly the naming convention:
@@ -31,6 +32,11 @@ generate-links.js will create or replace two json files in static/studentpages/
   ...
 ]
 ```
+
+## Limits
+The Layout has breakpoints to ensure the layout to work on all devices for up to 4 courses. 5 Courses still work on big and medium large screens.
+
+There is no limit to the amount of student's pages whithin a course.
 
 # sv
 
