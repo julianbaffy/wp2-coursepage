@@ -7,7 +7,7 @@
 
     let {courses, links, startPosition='auto', smallButtons=false } = $props();
 
-    let currentPosition=$state(''); //'auto' or any courseID
+    let currentPosition=$state('1'); //'auto' or any courseID
 
     function openTab(id: string){
         const scrollY = window.scrollY;
@@ -35,16 +35,24 @@
 
 	// Intersection Observer einrichten
 	onMount(() => {
-        //set startposition on first non-empty course
-        if (startPosition === 'auto' && links && courses) {
-            for (let course of courses) {
-                if (links.some((link: Link) => link.courseID === course.courseID)) {
-                    currentPosition = course.courseID;
-                    break;
+        //set startposition on first non-empty course or on the first, if all are empty.
+        if (links.length > 0 && courses.length > 0) {
+            if (startPosition === 'auto') {
+                for (let course of courses) {
+                    if (links.some((link: Link) => link.courseID === course.courseID)) {
+                        currentPosition = course.courseID;
+                        openTab(course.courseID);
+                        break;
+                    }
                 }
+            } else {
+                currentPosition = startPosition;
+                openTab(startPosition);
             }
         } else {
-            currentPosition = startPosition;
+            // Fallback, wenn alles leer ist
+            currentPosition = '1';
+            openTab('1');
         }
 
 		const observer = new IntersectionObserver(
