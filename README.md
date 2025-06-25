@@ -44,7 +44,7 @@ generate-links.js will create or replace two json files in static/studentpages/
 
 # sv
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This app is built with Svelte and svelteKit. Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
 ## Developing
 
