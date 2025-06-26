@@ -1,13 +1,14 @@
 # About
+I created this homepage to display the products of a project my students worked on. They created websites with HTML and CSS files which are provided in the static directory of this repository. Although I use Tailwind CSS in some snippets, I tried to stick to pure CSS to make it accessible for the students.
 
-I created this homepage to display the products of a project my students worked on. they created Websites with HTML and CSS files which are provided in the static directory of this repository. Although I use Tailwind CSS in some snppets, I tried to stick to pure CSS to make it accessible for the students.
+The student's websites are linked in a grid on the frontpage, which is organised in tabs for different courses.
 
-The Websites are linked in a grid in the frontpage, which is organised in tabs for different courses.
+Currently the Website ist deployed on Vercel: https://wp2coursepage.vercel.app/ .
 
 # Manage courses and student's pages
 
 ## Open Tabs
-By default CourseTabs will open the first non-empty course or the first course, if all are empty. You can change that, by setting the "startPosition" for the CourseTabs component in src/routes/+page.svelte. This ist not recommended. If you just want a specific tab to be open when sharing the page, this is handeled by the searchParams which are set by opening a tab. (e. a. .../course=2).
+By default CourseTabs will open the first non-empty course or the first course, if all are empty. You can change that, by setting the value of "manualStartPosition" in src/routes/+page.svelte to any courseID. This ist not recommended. If you just want a specific tab to be open when sharing the page, this is handeled by the searchParams which are set by opening a tab. (e. a. .../course=2).
 
 ## Limits
 The Layout has breakpoints to make it work on all devices for up to 4 courses. 5 Courses still work on big and medium large screens.
@@ -15,7 +16,6 @@ The Layout has breakpoints to make it work on all devices for up to 4 courses. 5
 There is no limit to the amount of student's pages whithin a course.
 
 ## Adding new Studentpages and Courses
-
 1. Add a new directory to static/studentpages/ and follow strictly the naming convention:
     - static/studentpages/[courseID]\_[teacherName]/[studentName]\_[studentSurname]/...   Where courseID is a number.
     - in the student's directories shall be one file 'index.html' or 'Index.html'. The path to this file is saved as url and linked on the page. That ist the 'home'-page for the students website.
