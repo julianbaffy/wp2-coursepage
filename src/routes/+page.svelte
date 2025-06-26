@@ -5,6 +5,8 @@
 	
 	let { data } : {data: { links: Link[], courses: Course[];}} = $props();
 
+	let manualStartPosition = 'auto'; //set 'auto' for default behavior or any courseID to be opened when loading the page.
+
 	let width = $state(0);
 
 	function updateSize() {
@@ -36,7 +38,7 @@
 	</h2>
 </section>
 
-<CourseTabs courses={data.courses} links={data.links} startPosition='auto' smallButtons={smallButtons} />
+<CourseTabs courses={data.courses} links={data.links} startPosition={manualStartPosition}  smallButtons={smallButtons} />
 
 <style>
 	section {
