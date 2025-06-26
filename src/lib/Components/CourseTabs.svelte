@@ -102,6 +102,11 @@
 
 
 <div class="tab-container w-full mt-14">
+    <!-- Blur Overlay -->
+    {#if isSticky}
+        <div class="sticky-blur-overlay pointer-events-none"></div>
+    {/if}
+
     <div bind:this={sentinel} class="h-1"></div>
     <div class:stuck={isSticky} class="tab-controls sticky top-14 w-full h-auto flex relative pb-4 z-20">
 		{#each courses as course}
@@ -123,10 +128,10 @@
     .tab-controls::before {
 	content: "";
 	position: absolute;
-	inset: 0;
+	top: 0;
     left: -4em;
     right: -4em;
-    bottom: -0.6em;
+    height: 3em;
 	backdrop-filter: blur(30px);
 	-webkit-backdrop-filter: blur(30px);
 	mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
@@ -135,13 +140,22 @@
 	z-index: -1;
 }
 
-    .tab-controls.stuck::before{
-        top: -3.5em;
-    }
-
     .tab-controls{
         overflow-x: hidden;
-        overflow-y: hidden;
+        overflow-y: visible;
     }
+
+.sticky-blur-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 6.5em; /* oder größer bei Bedarf */
+	backdrop-filter: blur(30px);
+	-webkit-backdrop-filter: blur(30px);
+	mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+	-webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+	z-index: 10; /* unter .tab-controls (z-20), aber über allem anderen */
+}
 
 </style>
