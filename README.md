@@ -19,7 +19,7 @@ The layout includes breakpoints to support all screen sizes for up to 4 courses.
 There is no limit to the number of student pages within a course.
 
 ## Adding new Studentpages and Courses
-1. Add a new directory to static/studentpages/ and follow the strict naming convention </br>
+1. Add a new directory to static/studentpages/ and follow the strict naming convention: </br>
   ```
   static/studentpages/[courseID]\_[teacherName]/[studentName]\_[studentSurname]/...
   ```
