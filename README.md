@@ -23,9 +23,11 @@ There is no limit to the number of student pages within a course.
   ```
   static/studentpages/[courseID]\_[teacherName]/[studentName]\_[studentSurname]/...
   ```
-  Each student’s directory must contain a file named `index.html` or `Index.html`.
+  Each student’s directory must contain a file named `index.html` or `Index.html`. </br>
   This file will be used as the homepage and linked from the grid.
+
 2. Run `npm run generate:links` in the terminal.
+
 3. Deploy by pushing the commit to GitHub (the site will be automatically deployed via Vercel).
 
 ### What happen's?
