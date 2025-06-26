@@ -3,7 +3,7 @@ This homepage was created to showcase the results of a student project. The stud
 
 The students' websites are displayed in a grid on the front page, organized into tabs by course.
 
-The website is currently deployed on Vercel: https://wp2coursepage.vercel.app/
+The website is currently deployed on Vercel: https://wp2coursepage.vercel.app/ .
 
 # Manage courses and student's pages
 
