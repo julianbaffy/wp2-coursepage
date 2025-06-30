@@ -150,7 +150,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 6.5em; /* oder größer bei Bedarf */
+	height: 7em; /* oder größer bei Bedarf */
 	backdrop-filter: blur(30px);
 	-webkit-backdrop-filter: blur(30px);
 	mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
