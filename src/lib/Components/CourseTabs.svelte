@@ -142,7 +142,7 @@
 
     .tab-controls{
         overflow-x: hidden;
-        overflow-y: visible;
+        overflow-y: hidden;
     }
 
 .sticky-blur-overlay {
