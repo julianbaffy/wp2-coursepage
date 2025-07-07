@@ -1,6 +1,6 @@
 <script lang="ts">
     
-    import LinkGrid from "./LinkGrid.svelte";
+    import WebsiteGrid from "./WebsiteGrid.svelte";
     import TabsButton from "./TabsButton.svelte";
     import { onMount } from "svelte";
     import type { Link } from '$lib/types/customTypes';
@@ -118,7 +118,7 @@
     <div class="tab-content w-full">
         {#each courses as course, i}
             <div id={course.courseID} class="tab-item {currentPosition === course.courseID ? 'block' : 'hidden'}">
-                <LinkGrid courseID={course.courseID} links={links} />
+                <WebsiteGrid courseID={course.courseID} links={links} />
             </div>
         {/each}
     </div>

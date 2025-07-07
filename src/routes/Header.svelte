@@ -20,6 +20,12 @@
 			<li aria-current={page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/">Home</a>
 			</li>
+			<li aria-current={page.url.pathname === '/websites' ? 'page' : undefined}>
+				<a href="/websites">Websites</a>
+			</li>
+			<li aria-current={page.url.pathname === '/pygames' ? 'page' : undefined}>
+				<a href="/pygames">Pygames</a>
+			</li>
 			<li aria-current={page.url.pathname === '/about' ? 'page' : undefined}>
 				<a href="/about">About</a>
 			</li>
