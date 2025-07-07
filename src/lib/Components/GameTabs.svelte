@@ -1,6 +1,6 @@
 <script lang="ts">
     
-    import LinkGrid from "./WebsiteGrid.svelte";
+    import GameGrid from "./GameGrid.svelte";
     import TabsButton from "./TabsButton.svelte";
     import { onMount } from "svelte";
     import type { Link } from '$lib/types/customTypes';
