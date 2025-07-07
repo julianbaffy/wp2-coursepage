@@ -1,9 +1,12 @@
 <script lang="ts">
     import GameTabs from "$lib/Components/GameTabs.svelte";
 	import { onMount } from "svelte";
-	import type { Course, Link } from "$lib/types/customTypes";
+	import type { Course, WebsiteLink } from "$lib/types/customTypes";
+	import type { GameLink } from "$lib/types/customTypes";
+
+    import { games } from '$lib/data/games';
 	
-	let { data } : {data: { links: Link[], courses: Course[];}} = $props();
+	let { data } : {data: { links: GameLink[], courses: Course[];}} = $props();
 
 	let manualStartPosition = 'auto'; //set 'auto' for default behavior or any courseID to be opened when loading the page.
 
@@ -38,7 +41,7 @@
 	</h2>
 </section>
 
-<GameTabs courses={data.courses} links={data.links} startPosition={manualStartPosition}  smallButtons={smallButtons} />
+<GameTabs courses={data.courses} links={games} startPosition={manualStartPosition}  smallButtons={smallButtons} />
 
 <style>
 	section {

@@ -1,15 +1,13 @@
  <script lang="ts">
-  import ArrowToIcon from "$lib/images/ArrowToIcon.svelte";
-   let {courseID = "1", links} : {courseID: string, links: {
-    courseID: string;
-    teacher: string;
-    title: string;
-    url: string;
-    description: string;
-  }[]} = $props()
+    import ArrowToIcon from "$lib/images/ArrowToIcon.svelte";
+    import type { GameLink } from "$lib/types/customTypes";
 
+    import { games } from '$lib/data/games';
+
+   // let {courseID = "1", links} : {courseID: string, links: GameLink[]} = $props()
+  let {courseID} = $props()
   // Filtere die Links basierend auf der übergebenen CourseID
-  let filteredLinks = $derived(links.filter(link => link.courseID === courseID));
+  let filteredLinks = $derived(games.filter(link => link.courseID === courseID && (link.downloadUrl||link.onlineUrl)));
 
   filteredLinks = filteredLinks.sort((a, b) => a.title.localeCompare(b.title));
 </script>
@@ -57,10 +55,10 @@
 
 <div class="grid-container">
   {#if filteredLinks.length === 0}
-    <p class="text-center mt-10">Für diesen Kurs wurden noch keine Websites veröffentlicht.</p>
+    <p class="text-center mt-10">Für diesen Kurs wurden noch keine Spiele veröffentlicht.</p>
   {:else}
     {#each filteredLinks as link}
-      <a href="{link.url}" target="_blank">
+      <a href="{link.downloadUrl}" download="Pygame von {link.title}">
         <div class="tile">
           <h3>{link.title}</h3>
           {#if link.description}

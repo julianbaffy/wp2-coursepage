@@ -1,12 +1,8 @@
  <script lang="ts">
   import ArrowToIcon from "$lib/images/ArrowToIcon.svelte";
-   let {courseID = "1", links} : {courseID: string, links: {
-    courseID: string;
-    teacher: string;
-    title: string;
-    url: string;
-    description: string;
-  }[]} = $props()
+	import type { WebsiteLink } from "$lib/types/customTypes";
+	
+  let {courseID = "1", links} : {courseID: string, links: WebsiteLink[]} = $props()
 
   // Filtere die Links basierend auf der übergebenen CourseID
   let filteredLinks = $derived(links.filter(link => link.courseID === courseID));

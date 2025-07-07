@@ -3,7 +3,7 @@
     import GameGrid from "./GameGrid.svelte";
     import TabsButton from "./TabsButton.svelte";
     import { onMount } from "svelte";
-    import type { Link } from '$lib/types/customTypes';
+    import type { WebsiteLink } from '$lib/types/customTypes';
     import { page } from "$app/state";
     import { goto } from "$app/navigation";
 
@@ -70,7 +70,7 @@
         // 3. Erster nicht-leerer Kurs
             if (!resolved && courses.length > 0 && links.length > 0) {
                 for (let course of courses) {
-                    if (links.some((link: Link) => link.courseID === course.courseID)) {
+                    if (links.some((link: WebsiteLink) => link.courseID === course.courseID)) {
                         currentPosition = course.courseID;
                         openTab(course.courseID);
                         resolved = true;
@@ -118,7 +118,7 @@
     <div class="tab-content w-full">
         {#each courses as course, i}
             <div id={course.courseID} class="tab-item {currentPosition === course.courseID ? 'block' : 'hidden'}">
-                <GameGrid courseID={course.courseID} links={links} />
+                <GameGrid courseID={course.courseID} />
             </div>
         {/each}
     </div>
