@@ -1,5 +1,6 @@
-@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Source+Code+Pro:wght@400;700&display=swap');
 @import '@fontsource/fira-mono';
+@import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
@@ -8,6 +9,11 @@
 @import '@skeletonlabs/skeleton/themes/cerberus';
 
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+
+@font-face {
+  font-family: 'pixels';
+  src: url('pixels.ttf') format('truetype');
+}
 
 :root {
 	--font-body:
@@ -126,4 +132,12 @@ button:focus:not(:focus-visible) {
 	position: absolute;
 	width: 1px;
 	white-space: nowrap;
+}
+
+.websites {
+	font-family: 'Source Code Pro', monospace;
+}
+
+.games {
+	font-family: 'pixels', sans-serif;
 }
