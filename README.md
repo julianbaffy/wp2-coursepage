@@ -1,5 +1,5 @@
 # About
-This homepage was created to showcase the results of student's projects. The students built websites using HTML and CSS, and games with Pygame Zero which are stored in the `static` directory of this repository. While Tailwind CSS is used in some snippets, I tried to stick to pure CSS to keep the project accessible for the students.
+This homepage was created to showcase the results of student's projects. The students built websites using HTML and CSS and games with Pygame Zero which are stored in the `static` directory of this repository. While Tailwind CSS is used in some snippets, I tried to stick to pure CSS to keep the project accessible for the students.
 
 The students' websites and games are displayed in gids, organized into tabs by course.
 
@@ -53,7 +53,7 @@ The script `generate-links.js` will be run automatically in the prebuild and pre
   ...
 ]
 ```
-They save the different courses, each project has been carried out.
+They save the different courses, in which each project has been carried out.
 
 2. `/src/lib/generated/games/games.json`, which looks like this:
 ```json
