@@ -36,9 +36,9 @@ $effect(() => {
     align-items: center;
     width: 75px;
     gap: 8px;
-    transform: scale(0.95);
-    margin-top: -1.7em;
-    margin-bottom: -0.9em;
+    transform: scale(0.93);
+    margin-top: -2em;
+    margin-bottom: -1em;
 }
 
 .left-column{
@@ -50,16 +50,16 @@ $effect(() => {
 
 .if{
     font-size: 60px;
-    line-height: 0.2;
+    line-height: 0.6;
 }
 
 .teacher{
     font-size: 35px;
-    line-height: 0.5;
+    line-height: 0.35;
 }
 
 .course-id {
-  font-size: 110px;
+  font-size: 115px;
   font-weight: 700;
     display: flex;
     align-items: center;
@@ -95,15 +95,15 @@ button:hover:not(.active) {
 }
 
 @keyframes scaleUp {
-	from { transform: scale(0.95);
+	from { transform: scale(0.93);
             opacity: 70%; }
-	to   { transform: scale(1.05);
+	to   { transform: scale(1);
             opacity: 100%; }
 }
 @keyframes scaleDown {
-	from { transform: scale(1.05);
+	from { transform: scale(1);
             opacity: 100%; }
-	to   { transform: scale(0.95);
+	to   { transform: scale(0.93);
             opacity: 70%; }
 }
 
@@ -115,7 +115,7 @@ button:hover:not(.active) .button-content {
 
 /* ----- ACTIVE: Bleibt dauerhaft geslidet ----- */
 button.active .button-content {
-	transform: scale(1.05);
+	transform: scale(1);
     opacity: 100%;
 }
 
