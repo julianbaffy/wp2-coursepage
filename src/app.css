@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: 'pixels';
-  src: url('pixels.ttf') format('truetype');
+  src: url('/pixels.ttf') format('truetype');
 }
 
 :root {
