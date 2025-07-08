@@ -1,5 +1,5 @@
 <script lang="ts">
-    import GameTabs from "$lib/Components/GameTabs.svelte";
+    import GameTabs from "$lib/Components/Games/GameTabs.svelte";
 	import { onMount } from "svelte";
 	import type { Course, WebsiteLink } from "$lib/types/customTypes";
 	import type { GameLink } from "$lib/types/customTypes";

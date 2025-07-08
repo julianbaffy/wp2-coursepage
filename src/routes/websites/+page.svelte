@@ -1,9 +1,9 @@
 <script lang="ts">
-    import WebsiteTabs from "$lib/Components/WebsiteTabs.svelte";
+    import WebsiteTabs from "$lib/Components/Websites/WebsiteTabs.svelte";
 	import { onMount } from "svelte";
-	import type { Course, Link } from "$lib/types/customTypes";
+	import type { Course, WebsiteLink } from "$lib/types/customTypes";
 	
-	let { data } : {data: { links: Link[], courses: Course[];}} = $props();
+	let { data } : {data: { links: WebsiteLink[], courses: Course[];}} = $props();
 
 	let manualStartPosition = 'auto'; //set 'auto' for default behavior or any courseID to be opened when loading the page.
 
