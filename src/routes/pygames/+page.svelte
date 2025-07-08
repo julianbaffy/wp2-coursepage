@@ -33,11 +33,11 @@
 
 <section>
 	<h1 class="games">
-		Pygame Zero
+		Spieleprogrammierung
 	</h1>
 
 	<h2>
-		<strong>am Apostelgymnasium Köln</strong>
+		<strong>mit Pygame Zero</strong>
 	</h2>
 </section>
 
