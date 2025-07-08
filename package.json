@@ -5,6 +5,10 @@
 	"type": "module",
 	"scripts": {
 		"generate:links": "node scripts/generate-links.js",
+
+		"predev": "npm run generate:links",
+  		"prebuild": "npm run generate:links",
+
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
