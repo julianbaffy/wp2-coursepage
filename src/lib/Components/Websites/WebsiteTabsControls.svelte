@@ -17,7 +17,7 @@ $effect(() => {
 <button
     onclick={() => openTab(courseID)}
     class="w-full -my-3 flex justify-center text-center items-center transition-all duration-200
-    {isActive ? 'active' : ''} {justActivated ? 'justActivated' : ''} {smallButtons ? 'smallButtons' : ''}"
+    {isActive ? 'active' : 'inactive'} {justActivated ? 'justActivated' : ''} {smallButtons ? 'smallButtons' : ''}"
     >
    <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ $effect(() => {
                 />
             </svg>
             
-            <div class="button-content">
+            <div class="button-content websites">
                 <div class="left-column">
                     <span class="if">IF</span>
                     <span class="teacher">{courseTeacher}</span>
@@ -86,7 +86,6 @@ $effect(() => {
     align-items: center;
     width: 75px;
     gap: 8px;
-    font-family: 'Source Code Pro', monospace;
 }
 
 .left-column{
@@ -135,6 +134,10 @@ button:hover:not(.active) {
 
 .active{
     opacity: 1;
+}
+
+.inactive{
+    opacity: 0.7;
 }
 
 @keyframes slideLeftOut {
