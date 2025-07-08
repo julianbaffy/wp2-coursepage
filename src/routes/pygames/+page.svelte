@@ -32,8 +32,8 @@
 </svelte:head>
 
 <section>
-	<h1>
-		Pygame Zero Projekte
+	<h1 class="games">
+		Pygame Zero
 	</h1>
 
 	<h2>
@@ -54,5 +54,8 @@
 
 	h1 {
 		width: 100%;
+		font-size: 80px;
+		line-height: 1;
+		margin-top: -0.1em;
 	}
 </style>

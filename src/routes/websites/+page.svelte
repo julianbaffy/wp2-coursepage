@@ -29,12 +29,12 @@
 </svelte:head>
 
 <section>
-	<h1>
-		Website Projekte des WP II Informatik
+	<h1 class="websites">
+		Websites
 	</h1>
 
 	<h2>
-		<strong>am Apostelgymnasium Köln</strong>
+		<strong>mit HTML und CSS</strong>
 	</h2>
 </section>
 
