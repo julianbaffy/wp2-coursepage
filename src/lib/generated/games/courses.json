@@ -1,0 +1,14 @@
+[
+  {
+    "courseID": "1",
+    "teacher": "BEH"
+  },
+  {
+    "courseID": "2",
+    "teacher": "BUG"
+  },
+  {
+    "courseID": "3",
+    "teacher": "BAF"
+  }
+]

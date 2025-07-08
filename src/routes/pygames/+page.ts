@@ -1,23 +1,14 @@
-export const prerender = true;
-
-// src/routes/+page.ts
+import type { GameLink, Course } from '$lib/types/customTypes';
+import rawGames from '$lib/generated/games/games.json';
+import rawCourses from '$lib/generated/games/courses.json';
 import type { PageLoad } from '../$types';
 
-export const load: PageLoad = async ({ fetch }) => {
-	const [linksRes, coursesRes] = await Promise.all([
-		fetch('/studentpages/links.json'),
-		fetch('/studentpages/courses.json')
-	]);
+export const prerender = true;
 
-	if (!linksRes.ok || !coursesRes.ok) {
-		console.error('⚠️ Fehler beim Laden von studentpages JSON-Dateien');
-		return { links: [], courses: [] };
-	}
+const links = rawGames as GameLink[];
+const courses = rawCourses as Course[];
 
-	const [links, courses] = await Promise.all([
-		linksRes.json(),
-		coursesRes.json()
-	]);
 
+export const load: PageLoad = async () => {
 	return { links, courses };
 };

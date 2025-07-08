@@ -118,7 +118,7 @@
     <div class="tab-content w-full">
         {#each courses as course, i}
             <div id={course.courseID} class="tab-item {currentPosition === course.courseID ? 'block' : 'hidden'}">
-                <GameGrid courseID={course.courseID} />
+                <GameGrid courseID={course.courseID} links={links} />
             </div>
         {/each}
     </div>

@@ -4,10 +4,9 @@
 
     import { games } from '$lib/data/games';
 
-   // let {courseID = "1", links} : {courseID: string, links: GameLink[]} = $props()
-  let {courseID} = $props()
+  let {courseID = "1", links} : {courseID: string, links: GameLink[]} = $props()
   // Filtere die Links basierend auf der übergebenen CourseID
-  let filteredLinks = $derived(games.filter(link => link.courseID === courseID && (link.downloadUrl||link.onlineUrl)));
+  let filteredLinks = $derived(links.filter(link => link.courseID === courseID && (link.downloadUrl||link.onlineUrl)));
 
   filteredLinks = filteredLinks.sort((a, b) => a.title.localeCompare(b.title));
 </script>
