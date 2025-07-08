@@ -1,15 +1,27 @@
 [
   {
-    "courseID": "2",
-    "teacher": "BUG",
+    "courseID": "1",
+    "teacher": "BEH",
     "title": "Test2 S.",
-    "downloadUrl": "/pygames/2_BUG/Test2_S./download.zip"
+    "downloadUrl": "/pygames/1_BEH/Test2_S./download.zip"
+  },
+  {
+    "courseID": "1",
+    "teacher": "BEH",
+    "title": "Test S.",
+    "downloadUrl": "/pygames/1_BEH/Test_S./download.zip"
   },
   {
     "courseID": "2",
     "teacher": "BUG",
     "title": "Test S.",
     "downloadUrl": "/pygames/2_BUG/Test_S./download.zip"
+  },
+  {
+    "courseID": "3",
+    "teacher": "BAF",
+    "title": "Test2 S.",
+    "downloadUrl": "/pygames/3_BAF/Test2_S./download.zip"
   },
   {
     "courseID": "3",

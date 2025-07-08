@@ -1,10 +1,7 @@
 <script lang="ts">
     import GameTabs from "$lib/Components/Games/GameTabs.svelte";
 	import { onMount } from "svelte";
-	import type { Course, WebsiteLink } from "$lib/types/customTypes";
-	import type { GameLink } from "$lib/types/customTypes";
-
-    import { games } from '$lib/data/games';
+	import type { Course, GameLink } from "$lib/types/customTypes";
 	
 	let { data } : {data: { links: GameLink[], courses: Course[];}} = $props();
 
@@ -41,7 +38,7 @@
 	</h2>
 </section>
 
-<GameTabs courses={data.courses} links={games} startPosition={manualStartPosition}  smallButtons={smallButtons} />
+<GameTabs courses={data.courses} links={data.links} startPosition={manualStartPosition}  smallButtons={smallButtons} />
 
 <style>
 	section {
