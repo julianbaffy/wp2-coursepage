@@ -1,15 +1,15 @@
 # About
-This homepage was created to showcase the results of a student project. The students built websites using HTML and CSS, which are stored in the `static` directory of this repository. While Tailwind CSS is used in some snippets, I tried to stick to pure CSS to keep the project accessible for the students.
+This homepage was created to showcase the results of student's projects. The students built websites using HTML and CSS, and games with Pygame Zero which are stored in the `static` directory of this repository. While Tailwind CSS is used in some snippets, I tried to stick to pure CSS to keep the project accessible for the students.
 
-The students' websites are displayed in a grid on the front page, organized into tabs by course.
+The students' websites and games are displayed in gids, organized into tabs by course.
 
 The website is currently deployed on Vercel: https://wp2coursepage.vercel.app/ .
 
-# Manage courses and student's pages
+# Manage courses and student's pages and games
 
 ## Open Tabs
-By default, the `CourseTabs` component will open the first non-empty course, or the first course if all are empty.
-You can change this by setting the `manualStartPosition` variable in `src/routes/+page.svelte` to any `courseID`.
+By default, the `WebsiteTabs` or `GameTabs` component will open the first non-empty course, or the first course if all are empty.
+You can change this by setting the `manualStartPosition` variable in `src/routes/websites/+page.svelte` or `src/routes/pygames/+page.svelte` to any `courseID`.
 **This is not recommended**. If you want a specific tab to be open when sharing the page, this can be handled via the URL's searchParams, which are set automatically when a tab is opened (e.g., ...?course=2).
 
 ## Limits
@@ -27,12 +27,10 @@ There is no limit to the number of student pages within a course.
   - Each student’s directory must contain a file named `index.html` or `Index.html`. </br>
   This file will be used as the homepage and linked from the grid.
 
-2. Run `npm run generate:links` in the terminal.
-
 3. Deploy by pushing the commit to GitHub (the site will be automatically deployed via Vercel).
 
 ### What happen's?
-The script `generate-links.js` will create or replace two json files in `static/studentpages/`:
+The script `generate-links.js` will be run create or replace two json files in `static/studentpages/`:
 1. 'courses.json', which looks like this:
 ```json
 [
