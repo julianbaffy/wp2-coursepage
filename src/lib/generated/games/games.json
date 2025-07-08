@@ -16,17 +16,5 @@
     "teacher": "BUG",
     "title": "Test S.",
     "downloadUrl": "/pygames/2_BUG/Test_S./download.zip"
-  },
-  {
-    "courseID": "3",
-    "teacher": "BAF",
-    "title": "Test2 S.",
-    "downloadUrl": "/pygames/3_BAF/Test2_S./download.zip"
-  },
-  {
-    "courseID": "3",
-    "teacher": "BAF",
-    "title": "Test S.",
-    "downloadUrl": "/pygames/3_BAF/Test_S./download.zip"
   }
 ]

@@ -25,13 +25,25 @@ There is no limit to the number of student pages within a course.
   ```
   - `courseID` must be a number
   - Each student’s directory must contain a file named `index.html` or `Index.html`. </br>
-  This file will be used as the homepage and linked from the grid.
+  This file will be used as starting page for the homepage and linked linked the grid.
 
-3. Deploy by pushing the commit to GitHub (the site will be automatically deployed via Vercel).
+2. Deploy by pushing the commit to GitHub (the site will be automatically deployed via Vercel). Locally run `npm run dev`.
 
-### What happen's?
-The script `generate-links.js` will be run create or replace two json files in `static/studentpages/`:
-1. 'courses.json', which looks like this:
+## Adding new Pygames and Courses
+1. Add a new directory to static/pygames/ and follow the strict naming convention: </br>
+  ```
+  static/pygames/[courseID]\_[teacherName]/[studentName]\_[studentSurname]/...
+  ```
+  - `courseID` must be a number
+  - Each student’s directory must contain a file named `download.zip`. </br>
+  This file will be linked as download file in the grid.
+
+2. Deploy by pushing the commit to GitHub (the site will be automatically deployed via Vercel). Locally run `npm run dev`.
+
+## What happen's?
+The script `generate-links.js` will be run automatically in the prebuild and predev. It creates or replaces four json files:
+
+1. `/src/lib/generated/games/courses.json` and `/src/lib/generated/websites/courses.json` which look like this:
 ```json
 [
   {
@@ -41,8 +53,24 @@ The script `generate-links.js` will be run create or replace two json files in `
   ...
 ]
 ```
+They save the different courses, each project has been carried out.
 
-2. 'links.json', which looks like this:
+2. `/src/lib/generated/games/games.json`, which looks like this:
+```json
+[
+  {
+    "courseID": "1",
+    "teacher": "EXAMPLE",
+    "title": "Student A",
+    "downloadUrl": "studentpages/1_EXAMPLE/Student_A/index.html",
+    "onlineUrl": "..."
+  },
+  ...
+]
+```
+The onlineUrl is not set yet since we did not work out, how to run Pygame Zero with pygbag.
+
+3. `/src/lib/generated/websites/links.json`, which looks like this:
 ```json
 [
   {
