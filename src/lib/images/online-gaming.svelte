@@ -1,5 +1,5 @@
 <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 32 32" xml:space="preserve" class="size-8" stroke="none" fill="currentColor">
+	 viewBox="0 0 32 32" xml:space="preserve" class="size-6" stroke="none" fill="currentColor">
 <style type="text/css">
 	.st0{stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 </style>

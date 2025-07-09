@@ -49,7 +49,7 @@
   .link-container {
     display: flex;
     gap: 0.8em;
-    margin-top: 1em;
+    margin-top: 0.5em;
   }
 
   .link-button {
@@ -113,14 +113,6 @@
     display: flex;
   }
 
-  .icon-wrapper svg {
-    width: 1.5em;
-    height: 1.5em;
-    fill: currentColor;
-    color: inherit;
-    transition: color 0.3s ease;
-  }
-
   .link-button.active:hover .icon-wrapper {
     color: var(--color-bg-2);
   }
@@ -142,18 +134,18 @@
           <div class="link-container">
             {#if link.onlineUrl}
               <a href={link.onlineUrl} target="_blank" rel="noopener">
-                <button class="link-button active"><span class="icon-wrapper"><OnlineGaming /></span></button>
+                <button class="link-button active text-base"><span class="icon-wrapper"><OnlineGaming /></span></button>
               </a>
             {:else}
-              <button class="link-button inactive"><span class="icon-wrapper"><OnlineGaming /></span></button>
+              <button class="link-button inactive text-base"><span class="icon-wrapper"><OnlineGaming /></span></button>
             {/if}
 
             {#if link.downloadUrl}
               <a href={link.downloadUrl} download="Pygame von {link.title}">
-                <button class="link-button active"><span class="icon-wrapper"><Download1 /></span></button>
+                <button class="link-button active text-base"><span class="icon-wrapper"><Download1 /></span></button>
               </a>
             {:else}
-              <button class="link-button inactive"><span class="icon-wrapper"><Download1 /></span></button>
+              <button class="link-button inactive text-base"><span class="icon-wrapper"><Download1 /></span></button>
             {/if}
           </div>
 

@@ -1,7 +1,8 @@
 <script lang="ts">
-    import WebsiteTabs from "$lib/Components/Websites/WebsiteTabs.svelte";
+    import WebsiteTabs from "$lib/components/Websites/WebsiteTabs.svelte";
 	import { onMount } from "svelte";
 	import type { Course, WebsiteLink } from "$lib/types/customTypes";
+	import overview from '$lib/images/projectoverview.png';
 	
 	let { data } : {data: { links: WebsiteLink[], courses: Course[];}} = $props();
 
@@ -37,6 +38,17 @@
 		<strong>mit HTML und CSS</strong>
 	</h2>
 </section>
+
+<div class="text-column">
+	<p>
+		Direkt zu Beginn des Wahlpflichtfaches Informatik in der neunten Klasse lernen die Schülerinnen und Schüler
+		.html Dateien zu erstellen und zu gestalten. Dadurch lernen sie das Grundprinzip der Markup Language kennen,
+		welche Grundlage für jede Website im www ist. Anschließend werden CSS sheets hinzugefügt und ein ganzes Website Projekt erstellt.
+	</p>
+
+	<img src={overview} alt="Übersicht" class="mt-6 w-full" />
+</div>
+
 
 <WebsiteTabs courses={data.courses} links={data.links} startPosition={manualStartPosition}  smallButtons={smallButtons} />
 
