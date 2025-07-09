@@ -37,8 +37,8 @@ $effect(() => {
     width: 75px;
     gap: 8px;
     transform: scale(0.93);
-    margin-top: -2em;
-    margin-bottom: -1em;
+    margin-top: -2.2em;
+    margin-bottom: -1.1em;
 }
 
 .left-column{
