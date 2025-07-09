@@ -1,5 +1,5 @@
 <script lang="ts">
-    import GameTabs from "$lib/components/Games/GameTabs.svelte";
+    import GameTabs from "$lib/Components/Games/GameTabs.svelte";
 	import { onMount } from "svelte";
 	import type { Course, GameLink } from "$lib/types/customTypes";
 	
@@ -38,20 +38,6 @@
 	</h2>
 </section>
 
-<section class="description">
-	Mithilfe der Python Bibliothek "Pygame Zero" wurde zunächst ein "Spaceshooter" analysiert und nachgebaut. Dabei wurden
-	Grundlagen in der Programmierung mit Python erworben, unter Anderem
-	<ul>
-		<li>Objekte einer Klasse "Actor"</li>
-		<li>globale und lokale Variablen</li>
-		<li>Definition und Aufruf von Funktionen</li>
-		<li>(if-)Bedingungen für Entscheidungen</li>
-		<li>Listen und for-Schleifen</li>
-	</ul>
-	Zum Abschluss wurden individuelle Projekte in Pygame Zero umgesetzt. Das ist entweder eine Weiterentwicklung des Spaceshooters
-	oder die Entwicklung eines eigenen Spiels.
-</section>
-
 <GameTabs courses={data.courses} links={data.links} startPosition={manualStartPosition}  smallButtons={smallButtons} />
 
 <style>
@@ -68,15 +54,5 @@
 		font-size: 80px;
 		line-height: 1;
 		margin-top: -0.1em;
-	}
-
-	.description{
-		align-items: start;
-	}
-
-	ul {
-		list-style-type: square;
-		text-align: start;
-		padding-left: 2em;
 	}
 </style>
