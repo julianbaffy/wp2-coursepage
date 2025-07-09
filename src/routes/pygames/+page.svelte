@@ -38,7 +38,7 @@
 	</h2>
 </section>
 
-<section class="description">
+<div class="text-column">
 	Mithilfe der Python Bibliothek "Pygame Zero" wurde zunächst ein "Spaceshooter" analysiert und nachgebaut. Dabei wurden
 	Grundlagen in der Programmierung mit Python erworben, unter Anderem
 	<ul>
@@ -50,7 +50,7 @@
 	</ul>
 	Zum Abschluss wurden individuelle Projekte in Pygame Zero umgesetzt. Das ist entweder eine Weiterentwicklung des Spaceshooters
 	oder die Entwicklung eines eigenen Spiels.
-</section>
+</div>
 
 <GameTabs courses={data.courses} links={data.links} startPosition={manualStartPosition}  smallButtons={smallButtons} />
 
@@ -78,5 +78,7 @@
 		list-style-type: square;
 		text-align: start;
 		padding-left: 2em;
+		margin-top: 1em;
+		margin-bottom: 1em;
 	}
 </style>
