@@ -1,6 +1,9 @@
  <script lang="ts">
     import ArrowToIcon from "$lib/images/ArrowToIcon.svelte";
     import type { GameLink } from "$lib/types/customTypes";
+    import Download1 from "$lib/images/download1.svelte";
+    import Download2 from "$lib/images/download2.svelte";
+    import OnlineGaming from "$lib/images/online-gaming.svelte";
 
   let {courseID = "1", links} : {courseID: string, links: GameLink[]} = $props()
   // Filtere die Links basierend auf der übergebenen CourseID
@@ -28,16 +31,10 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 0.5em;
     padding: 1.17em;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow:
     0.235em 0.235em 0.588em rgba(0, 0, 0, 0.1),  /* standard */
    -0.235em -0.235em 0.588em rgba(255, 255, 255, 0.3);
     font-size: 17px;
-  }
-
-  .tile:hover {
-    transform: translateY(-0.3em);
-    box-shadow: 0 0.471em 0.706em rgba(0, 0, 0, 0.15);
   }
 
   .tile h3 {
@@ -48,22 +45,119 @@
     font-size: 0.9em;
     color: #666;
   }
+
+  .link-container {
+    display: flex;
+    gap: 0.8em;
+    margin-top: 1em;
+  }
+
+  .link-button {
+    position: relative;
+    padding: 0.3em 1.5em;
+    border: none;
+    border-radius: 0.3em;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid;
+    border-color: currentColor;
+    border-width: 1px;
+  }
+
+
+  .link-button.active::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #414040;
+    z-index: 1;
+    transition: height 0.3s ease;
+  }
+
+  .link-button.active:hover::before {
+    height: 100%;
+  }
+
+  .link-button.active {
+    background-color: var(--color-bg-2);
+    filter: none;
+    opacity: 1;
+    border-width: 1.2px;
+  }
+
+  .link-button.inactive {
+    background-color:#f0f0f0;
+    color: #999;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: inset 0 0 0.2em rgba(0, 0, 0, 0.1);
+  }
+
+  .link-button.inactive .icon-wrapper {
+    
+  }
+
+  .icon-wrapper {
+    position: relative;
+    z-index: 2; /* wichtiger Punkt */
+    display: flex;
+  }
+
+  .icon-wrapper svg {
+    width: 1.5em;
+    height: 1.5em;
+    fill: currentColor;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+
+  .link-button.active:hover .icon-wrapper {
+    color: var(--color-bg-2);
+  }
 </style>
 
 <div class="grid-container">
   {#if filteredLinks.length === 0}
-    <p class="text-center mt-10">Für diesen Kurs wurden noch keine Spiele veröffentlicht.</p>
+    <section>
+      <p class="games text-center text-6xl -mt-4">GAME OVER</p>
+      <p class="text-center mt-4">Für diesen Kurs wurden noch keine Spiele veröffentlicht.</p>
+    </section>
   {:else}
     {#each filteredLinks as link}
-      <a href="{link.downloadUrl}" download="Pygame von {link.title}">
         <div class="tile">
           <h3>{link.title}</h3>
           {#if link.description}
             <p>{link.description}</p>
           {/if}
-          <div class="absolute top-2 right-2 opacity-50 hover:opacity-100"><ArrowToIcon/></div>
+          <div class="link-container">
+            {#if link.onlineUrl}
+              <a href={link.onlineUrl} target="_blank" rel="noopener">
+                <button class="link-button active"><span class="icon-wrapper"><OnlineGaming /></span></button>
+              </a>
+            {:else}
+              <button class="link-button inactive"><span class="icon-wrapper"><OnlineGaming /></span></button>
+            {/if}
+
+            {#if link.downloadUrl}
+              <a href={link.downloadUrl} download="Pygame von {link.title}">
+                <button class="link-button active"><span class="icon-wrapper"><Download1 /></span></button>
+              </a>
+            {:else}
+              <button class="link-button inactive"><span class="icon-wrapper"><Download1 /></span></button>
+            {/if}
+          </div>
+
         </div>
-      </a>
     {/each}
   {/if}
 </div>

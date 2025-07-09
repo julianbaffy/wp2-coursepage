@@ -53,7 +53,11 @@
 
 <div class="grid-container">
   {#if filteredLinks.length === 0}
-    <p class="text-center mt-10">Für diesen Kurs wurden noch keine Websites veröffentlicht.</p>
+    <section>
+      <p class="websites text-center text-2xl mt-6">404 NOT FOUND</p>
+      <p class="text-center mt-4">Für diesen Kurs wurden noch keine Websites veröffentlicht.</p>
+    </section>
+
   {:else}
     {#each filteredLinks as link}
       <a href="{link.url}" target="_blank">

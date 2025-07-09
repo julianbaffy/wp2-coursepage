@@ -34,11 +34,5 @@
     "teacher": "BEH",
     "title": "Test S.",
     "downloadUrl": "/pygames/1_BEH/Test_S./download.zip"
-  },
-  {
-    "courseID": "2",
-    "teacher": "BUG",
-    "title": "Test S.",
-    "downloadUrl": "/pygames/2_BUG/Test_S./download.zip"
   }
 ]
