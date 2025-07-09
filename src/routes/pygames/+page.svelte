@@ -1,5 +1,5 @@
 <script lang="ts">
-    import GameTabs from "$lib/Components/Games/GameTabs.svelte";
+    import GameTabs from "$lib/components/Games/GameTabs.svelte";
 	import { onMount } from "svelte";
 	import type { Course, GameLink } from "$lib/types/customTypes";
 	
@@ -38,6 +38,19 @@
 	</h2>
 </section>
 
+<div class="text-column max-h-full">
+	<p>
+		In diesem Projekt wurde zunächst ein "Spaceshooter" mithilfe der Python Bibliothek "Pygame Zero" nachgebaut und anschließend
+		eigene Projekte umgesetzt. Dabei erlernten die Schülerinnen und Schüler Grundlagen in der Programmierung mit Python, unter Anderem:</p>
+		<ul>
+			<li>Objekte einer Klasse "Actor" und "Screen" als interagierennde Objekte</li>
+			<li>globale und lokale Variablen</li>
+			<li>if-Bedingungen für Entscheidungen</li>
+			<li>Listen und for-Schleifen</li>
+		</ul>
+
+</div>
+
 <GameTabs courses={data.courses} links={data.links} startPosition={manualStartPosition}  smallButtons={smallButtons} />
 
 <style>
@@ -54,5 +67,13 @@
 		font-size: 80px;
 		line-height: 1;
 		margin-top: -0.1em;
+	}
+
+	ul {
+		margin-top: 1em;
+		margin-bottom: 1em;
+		list-style-type: square;
+		align-items: start;
+		padding-left: 2em;
 	}
 </style>
