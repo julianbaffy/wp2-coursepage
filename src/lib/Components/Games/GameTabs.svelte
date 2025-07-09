@@ -90,13 +90,13 @@
             currentPosition = courses[0].courseID;
             openTab(currentPosition);
         }
+        window.addEventListener('scroll', checkSticky, { passive: true });
+		    checkSticky(); // initial check
+    });
 
-		          checkSticky(); // initial check
-        });
-
-        onDestroy(() => {
-            window.removeEventListener('scroll', checkSticky);
-        });
+    onDestroy(() => {
+        window.removeEventListener('scroll', checkSticky);
+    });
 </script>
 
 
