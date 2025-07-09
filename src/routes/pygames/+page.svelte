@@ -1,5 +1,5 @@
 <script lang="ts">
-    import GameTabs from "$lib/components/Games/GameTabs.svelte";
+    import GameTabs from "$lib/Components/Games/GameTabs.svelte";
 	import { onMount } from "svelte";
 	import type { Course, GameLink } from "$lib/types/customTypes";
 	
@@ -46,6 +46,7 @@
 			<li>Objekte einer Klasse "Actor" und "Screen" als interagierennde Objekte</li>
 			<li>globale und lokale Variablen</li>
 			<li>if-Bedingungen für Entscheidungen</li>
+			<li>Definition und Aufruf von Funktionen</li>
 			<li>Listen und for-Schleifen</li>
 		</ul>
 
