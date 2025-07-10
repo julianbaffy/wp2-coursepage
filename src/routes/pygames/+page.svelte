@@ -30,7 +30,7 @@
 
 <section>
 	<h1 class="games">
-		Spieleprogrammierung
+		Spiele Programmieren
 	</h1>
 
 	<h2>
