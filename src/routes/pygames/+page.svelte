@@ -66,8 +66,9 @@
 	h1 {
 		width: 100%;
 		font-size: 80px;
-		line-height: 1;
-		margin-top: -0.1em;
+		line-height: 0.6;
+		margin-top: -0.05em;
+		margin-bottom: 0.4em;
 	}
 
 	ul {
