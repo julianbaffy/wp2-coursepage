@@ -2,7 +2,7 @@
     
     import GameGrid from "./GameGrid.svelte";
     import GameTabsControls from "./GameTabsControls.svelte";
-    import { onMount } from "svelte";
+    import { onMount, onDestroy } from "svelte";
     import type { WebsiteLink } from '$lib/types/customTypes';
     import { page } from "$app/state";
     import { goto } from "$app/navigation";
@@ -42,7 +42,7 @@
     
     // Intersection-Observer for tab-controls sentinel
 
-    let sentinel: HTMLDivElement;
+    let tabContainer: HTMLDivElement;
 	let isSticky = $state(false);
 
 	// Intersection Observer einrichten
@@ -85,30 +85,27 @@
             openTab(currentPosition);
         }
 
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				isSticky = !entry.isIntersecting;
-			},
-			{ rootMargin: '0px 0px 0px 0px', threshold: [1] }
-		);
-
-		if (sentinel) {
-			observer.observe(sentinel);
+		function checkSticky() {
+			const rect = tabContainer?.getBoundingClientRect();
+			isSticky = rect?.top <= 14;
 		}
 
-		return () => observer.disconnect();
+		window.addEventListener('scroll', checkSticky, { passive: true });
+		checkSticky();
+
+		return () => {
+			window.removeEventListener('scroll', checkSticky);
+		};
 	});
 </script>
 
 
-<div class="tab-container w-full mt-14">
-    <!-- Blur Overlay -->
-    {#if isSticky}
-        <div class="sticky-blur-overlay pointer-events-none"></div>
-    {/if}
+<div class="tab-container w-full mt-14" bind:this={tabContainer}>
+	{#if isSticky}
+		<div class="sticky-blur-overlay pointer-events-none"></div>
+	{/if}
 
-    <div bind:this={sentinel} class="h-1"></div>
-    <div class:stuck={isSticky} class="tab-controls sticky top-14 w-full h-auto flex relative pb-4 z-20">
+    <div class="tab-controls sticky top-14 w-full h-auto flex relative pb-4 z-20">
 		{#each courses as course}
 			<div class="button-container w-full text-center py-4 border-gray-400 {currentPosition === course.courseID ? 'border-x border-t rounded-t-[8px] bg-gradient-to-b from-white to-transparent' : 'border-b-1 hover:bg-gradient-to-t hover:from-white hover:to-transparent'} transition-opacity duration-200">
                 <GameTabsControls courseID={course.courseID} courseTeacher={course.teacher} isActive={currentPosition === course.courseID} smallButtons={smallButtons} openTab={openTab} />

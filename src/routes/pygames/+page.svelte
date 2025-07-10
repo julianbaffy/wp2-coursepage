@@ -43,7 +43,7 @@
 		In diesem Projekt wurde zunächst ein "Spaceshooter" mithilfe der Python Bibliothek "Pygame Zero" nachgebaut und anschließend
 		eigene Projekte umgesetzt. Dabei erlernten die Schülerinnen und Schüler Grundlagen in der Programmierung mit Python, unter Anderem:</p>
 		<ul>
-			<li>Objekte einer Klasse "Actor" und "Screen" als interagierennde Objekte</li>
+			<li>Objekte einer Klasse "Actor" und "Screen" als interagierende Objekte</li>
 			<li>globale und lokale Variablen</li>
 			<li>if-Bedingungen für Entscheidungen</li>
 			<li>Definition und Aufruf von Funktionen</li>
