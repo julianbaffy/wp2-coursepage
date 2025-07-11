@@ -143,3 +143,36 @@ button:focus:not(:focus-visible) {
 .games {
 	font-family: 'pixels', sans-serif;
 }
+
+.info-box {
+	background-color: rgba(255, 255, 255, 0.4); /* statt opacity */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px); /* für Safari */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5em;
+    padding: 1.17em;
+    box-shadow:
+    0.235em 0.235em 0.588em rgba(0, 0, 0, 0.1)  /* standard */;
+    font-size: 17px;
+}
+
+.info-box-dark {
+	background-color: rgba(40, 39, 39, 0.315); /* statt opacity */
+	color: rgb(239, 238, 238);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px); /* für Safari */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5em;
+    padding: 1.17em;
+    box-shadow:
+    0.235em 0.235em 0.588em rgba(0, 0, 0, 0.225)  /* standard */;
+    font-size: 17px;
+}
