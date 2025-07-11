@@ -32,8 +32,7 @@
     border-radius: 0.5em;
     padding: 1.17em;
     box-shadow:
-    0.235em 0.235em 0.588em rgba(0, 0, 0, 0.1),  /* standard */
-   -0.235em -0.235em 0.588em rgba(255, 255, 255, 0.3);
+    0.235em 0.235em 0.588em rgba(0, 0, 0, 0.1)  /* standard */;
     font-size: 17px;
   }
 

@@ -32,7 +32,6 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow:
     0.235em 0.235em 0.588em rgba(0, 0, 0, 0.1),  /* standard */
-   -0.235em -0.235em 0.588em rgba(255, 255, 255, 0.3);
     font-size: 17px;
   }
 
