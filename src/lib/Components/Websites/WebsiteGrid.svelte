@@ -18,6 +18,14 @@
     padding: 1.25em;
   }
 
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+	text-decoration: underline;
+}
+
   .tile {
     background-color: rgba(255, 255, 255, 0.4); /* statt opacity */
     display: flex;

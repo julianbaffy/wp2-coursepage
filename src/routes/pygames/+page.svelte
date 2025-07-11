@@ -2,6 +2,9 @@
     import GameTabs from "$lib/Components/Games/GameTabs.svelte";
 	import { onMount } from "svelte";
 	import type { Course, GameLink } from "$lib/types/customTypes";
+	import Online from "$lib/images/online-gaming.svelte";
+	import Download1 from "$lib/images/download1.svelte";
+	import ArrowUpRight from "$lib/images/ArrowUpRight.svelte";
 	
 	let { data } : {data: { links: GameLink[], courses: Course[];}} = $props();
 
@@ -38,19 +41,41 @@
 	</h2>
 </section>
 
-<div class="text-column">
-	<p>
-		In diesem Projekt wurde zunächst ein "Spaceshooter" mithilfe der Python Bibliothek "Pygame Zero" nachgebaut und anschließend
-		eigene Projekte umgesetzt. Dabei erlernten die Schülerinnen und Schüler Grundlagen in der Programmierung mit Python, unter Anderem:</p>
-		<ul>
-			<li>Objekte einer Klasse "Actor" und "Screen" als interagierende Objekte</li>
-			<li>globale und lokale Variablen</li>
-			<li>if-Bedingungen für Entscheidungen</li>
-			<li>Definition und Aufruf von Funktionen</li>
-			<li>Listen und for-Schleifen</li>
-		</ul>
+<section class="content">
+	<div class="description">
+		<p>
+			In diesem Projekt wurde zunächst ein "Spaceshooter" mithilfe der Python Bibliothek "<a href="https://pygame-zero.readthedocs.io/en/stable/" class="underline">Pygame Zero</a>" nachgebaut und anschließend
+			eigene Projekte umgesetzt. Dabei erlernten die Schülerinnen und Schüler Grundlagen in der Programmierung mit Python, unter Anderem:</p>
+			<ul>
+				<li>Objekte einer Klasse "Actor" und "Screen" als interagierende Objekte</li>
+				<li>globale und lokale Variablen</li>
+				<li>if-Bedingungen für Entscheidungen</li>
+				<li>Definition und Aufruf von Funktionen</li>
+				<li>Listen und for-Schleifen</li>
+			</ul>
+	</div>
 
-</div>
+	<div class="info-box content-box-dark">
+		<h3 class="games">How to Play</h3>
+		<div class="info-item">
+			<span class="icon text-gray-200"><Online /></span>
+			<div class="explanation">
+				Zurzeit ist es noch nicht möglich, die Spiele direkt im Browser zu spielen.
+			</div>
+		</div>
+		<div class="info-item">
+			<span class="icon text-gray-200"><Download1 /></span>
+			<div class="explanation">
+				<ol>
+					<li>Lade die zip-Datei herunter und entpacke den Spielordner.</li>
+					<li>Installiere den <a href="https://codewith.mu/" class="underline" target="_blank" > MU Editor <ArrowUpRight /></a></li>
+					<li>Klicke "load" und wähle die .py Datei im Spielordner aus.</li>
+					<li>Klicke "run".</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
 
 <GameTabs courses={data.courses} links={data.links} startPosition={manualStartPosition}  smallButtons={smallButtons} />
 
@@ -71,11 +96,124 @@
 		margin-bottom: 0.4em;
 	}
 
+	h3 {
+		text-align: center;
+		font-size: 60px;
+		color: var(--color-theme-1-light);
+		line-height: 0.5;
+		margin-top: -0.05em;
+		margin-bottom: 0.2em;
+	}
+
 	ul {
 		margin-top: 1em;
-		margin-bottom: 1em;
 		list-style-type: square;
 		align-items: start;
 		padding-left: 2em;
+	}
+
+	ol {
+		list-style-type: decimal;
+		padding-left: 1.2em;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		gap: 2em;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.description {
+		flex: 1 1;
+		margin-bottom: 1em;
+	}
+
+	.info-box {
+		flex: 0 0 320px;
+		display: flex;
+		flex-direction: column;
+		gap: 1.2em;
+	}
+
+	.info-item {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6em;
+	}
+
+	.icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 0.4em;
+	}
+
+	@media (max-width: 1060px) {
+		.content {
+			padding: 1em;
+		}
+	}
+
+	@media (max-width: 914px) {
+	.content {
+		flex-direction: column;
+		gap: 2.5em;
+	}
+
+	.info-box {
+		width: 100%;
+		flex: 1 1 auto;
+		max-width: 100%;
+	}
+	}
+
+	@media (max-width: 914px) and (min-width: 600px) {
+
+	.content {
+		padding: 1em;
+	}
+	
+	.info-item {
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 1em;
+	}
+
+	.icon {
+		flex: 0 0 2em;
+		align-items: flex-start;
+		margin-right: 0.8em;
+	}
+
+	.explanation {
+		flex: 1;
+	}
+	}
+
+	@media (max-width: 599px) {
+	
+	.info-item {
+		flex-direction: column;
+	}
+
+	.info-box {
+		gap: 1em;
+	}
+
+	.icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.content {
+		padding: 0em;
+	}
+
 	}
 </style>

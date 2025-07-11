@@ -36,6 +36,14 @@
     font-size: 17px;
   }
 
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+	  text-decoration: underline;
+  }
+
   .tile h3 {
     margin: 0.353em;
   }
