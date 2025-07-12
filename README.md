@@ -29,6 +29,8 @@ There is no limit to the number of student pages within a course.
 
 2. Deploy by pushing the commit to GitHub (the site will be automatically deployed via Vercel). Locally run `npm run dev`.
 
+To add a new, empty course, you have to save any file in it (e. g. just 'empty.html') because the Script runs in build but GitHub does not push empty directories. The file won't be displayed.
+
 ## Adding new Pygames and Courses
 1. Add a new directory to static/pygames/ and follow the strict naming convention: </br>
   ```
@@ -39,6 +41,8 @@ There is no limit to the number of student pages within a course.
   This file will be linked as download file in the grid.
 
 2. Deploy by pushing the commit to GitHub (the site will be automatically deployed via Vercel). Locally run `npm run dev`.
+
+To add a new, empty course, you have to save any file in it (e. g. just 'empty.zip') because the Script runs in build but GitHub does not push empty directories. The file won't be displayed.
 
 ## What happen's?
 The script `generate-links.js` will be run automatically in the prebuild and predev. It creates or replaces four json files:
