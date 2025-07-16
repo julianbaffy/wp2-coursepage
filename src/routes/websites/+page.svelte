@@ -39,15 +39,18 @@
 	</h2>
 </section>
 
-<div class="text-column">
-	<p>
-		Direkt zu Beginn des Wahlpflichtfaches Informatik in der neunten Klasse lernen die Schülerinnen und Schüler
-		.html Dateien zu erstellen und zu gestalten. Dadurch lernen sie das Grundprinzip der Markup Language kennen,
-		welche Grundlage für jede Website im www ist. Anschließend werden CSS sheets hinzugefügt und ein ganzes Website Projekt erstellt.
-	</p>
-
-	<img src={overview} alt="Übersicht" class="mt-6 w-full" />
-</div>
+<section class="content">
+	<div class="description">
+		<p>
+			Direkt zu Beginn des Wahlpflichtfaches Informatik in der neunten Klasse lernen die Schülerinnen und Schüler
+			.html Dateien zu erstellen und zu gestalten. Dadurch lernen sie das Grundprinzip der Markup Language kennen,
+			welche Grundlage für jede Website im www ist. Anschließend werden CSS sheets hinzugefügt und ein ganzes Website Projekt erstellt.
+		</p>
+	</div>
+	<div class="info">
+		<img src={overview} alt="Übersicht" class="mt-6 w-full" />
+	</div>
+</section>
 
 <WebsiteTabs courses={data.courses} links={data.links} startPosition={manualStartPosition}  smallButtons={smallButtons} />
 
@@ -63,4 +66,51 @@
 	h1 {
 		width: 100%;
 	}
+
+	.content {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		gap: 2em;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.description {
+		flex: 1 1;
+		margin-bottom: 1em;
+	}
+
+
+	@media (max-width: 1060px) {
+		.content {
+			padding: 1em;
+		}
+	}
+
+	@media (max-width: 914px) {
+	.content {
+		flex-direction: column;
+		gap: 2.5em;
+	}
+
+	.info {
+		width: 100%;
+		max-width: 100%;
+	}
+	}
+
+	@media (max-width: 914px) and (min-width: 600px) {
+	.content {
+		padding: 1em;
+	}
+	}
+
+	@media (max-width: 599px) {
+	.content {
+		padding: 0em;
+	}
+}
 </style>
