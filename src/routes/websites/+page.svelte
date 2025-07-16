@@ -79,10 +79,14 @@
 	}
 
 	.description {
-		flex: 1 1;
-		margin-bottom: 1em;
+		flex: 1 1 50%;
+		margin-top: 1em;
+		text-align: justify;
 	}
 
+	.info {
+		flex: 1 1 40%;
+	}
 
 	@media (max-width: 1060px) {
 		.content {
@@ -93,24 +97,32 @@
 	@media (max-width: 914px) {
 	.content {
 		flex-direction: column;
-		gap: 2.5em;
+		gap: 0.5em;
+		align-items: center;
 	}
 
 	.info {
-		width: 100%;
-		max-width: 100%;
+		width: 80%;
+		max-width: 80%;
 	}
 	}
 
 	@media (max-width: 914px) and (min-width: 600px) {
 	.content {
 		padding: 1em;
+		align-items: center;
 	}
 	}
 
 	@media (max-width: 599px) {
 	.content {
 		padding: 0em;
+		align-items: center;
+	}
+
+	.info {
+		width: 90%;
+		max-width: 90%;
 	}
 }
 </style>
