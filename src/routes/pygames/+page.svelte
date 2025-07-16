@@ -131,6 +131,7 @@
 	.description {
 		flex: 1 1;
 		margin-bottom: 1em;
+		text-align: justify;
 	}
 
 	.info-box {
