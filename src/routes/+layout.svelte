@@ -1,6 +1,11 @@
 <script lang="ts">
 	import Header from './Header.svelte';
 	import '../app.css';
+	import { afterNavigate } from '$app/navigation';
+
+	afterNavigate(() => {
+		window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+	});
 	
 	let { children } = $props();
 </script>
