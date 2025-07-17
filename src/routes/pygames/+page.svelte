@@ -44,15 +44,19 @@
 <section class="content">
 	<div class="description">
 		<p>
-			In diesem Projekt wurde zunächst ein "Spaceshooter" mithilfe der Python Bibliothek "<a href="https://pygame-zero.readthedocs.io/en/stable/" class="underline">Pygame Zero</a>" nachgebaut und anschließend
-			eigene Projekte umgesetzt. Dabei erlernten die Schülerinnen und Schüler Grundlagen in der Programmierung mit Python, unter Anderem:</p>
+			In diesem Projekt programmieren die Schülerinnen und Schüler zunächst einen klassischen Spaceshooter mithilfe der Python-Bibliothek
+			"<a href="https://pygame-zero.readthedocs.io/en/stable/" class="underline">Pygame Zero</a>".
+			Anschließend setzen sie eigene Spielideen um. Dabei lernen sie zentrale Konzepte der Programmierung mit Python kennen – unter anderem:</p>
 			<ul>
-				<li>Objekte einer Klasse "Actor" und "Screen" als interagierende Objekte</li>
-				<li>globale und lokale Variablen</li>
-				<li>if-Bedingungen für Entscheidungen</li>
-				<li>Definition und Aufruf von Funktionen</li>
-				<li>Listen und for-Schleifen</li>
+				<li>den Umgang mit <strong>Objekten</strong> wie "Actor" und "Screen"</li>
+				<li>den Unterschied zwischen <strong>globalen</strong> und <strong>lokalen Variablen</strong></li>
+				<li>den Einsatz von <strong>if-Bedingungen</strong> für einfache Entscheidungslogik</li>
+				<li>das <strong>Definieren und Aufrufen von Funktionen</strong></li>
+				<li>das Verwenden von <strong> Listen und for-Schleifen</strong></li>
 			</ul>
+
+		<p>Neben dem Programmieren steht auch das kreative Game Design im Mittelpunkt –
+			von der Steuerung über den Sound bis hin zu eigenen Grafiken.</p>
 	</div>
 
 	<div class="info-box content-box-dark">
@@ -106,10 +110,12 @@
 	}
 
 	ul {
-		margin-top: 1em;
+		margin-top: 0.9em;
+		margin-bottom: 0.9em;
 		list-style-type: square;
 		align-items: start;
 		padding-left: 2em;
+		line-height: 1.6;
 	}
 
 	ol {
