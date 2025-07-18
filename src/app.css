@@ -163,4 +163,5 @@ button:focus:not(:focus-visible) {
     box-shadow:
     0.235em 0.235em 0.588em rgba(0, 0, 0, 0.225)  /* standard */;
     font-size: 17px;
+	text-align: justify;
 }

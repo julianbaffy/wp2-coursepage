@@ -122,8 +122,6 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		border: solid;
-		border-width: 1.5px;
 		margin-inline: auto;
 	}
 
@@ -139,10 +137,14 @@
 
 	.link-button.dark:hover {
 		color: #414040;
+		border: solid;
+		border-width: 1.5px;
 	}
 
 	.link-button.bright:hover {
 		color: var(--color-bg-2);
+		border: solid;
+		border-width: 1.5px;
 	}
 
 
@@ -204,5 +206,12 @@
 	.description {
 		margin-top: 0;
 	}
+	}
+
+	@media (max-width: 599px) {
+		.description {
+			padding: 0px;
+			margin: 0em;
+		}
 	}
 </style>
