@@ -37,8 +37,8 @@
 		<DeviceMockups />
 	</div>
 	<div class="description -translate-y-12 md:translate-y-0">
-		<h3 class="websites text-[27px] md:text-[29px]">Websites mit HTML und CSS</h3>
-		<p class="websites mt-3 md:text-[16px]">
+		<h3 class="websites text-[27px] mb-6 md:mb-2 md:text-[29px]">Websites mit HTML und CSS</h3>
+		<p class="mt-3 md:text-[16px]">
 			Was passiert eigentlich im Browser? Wie funktioniert eine Website?
 			Mit HTML und CSS gestalten die Schülerinnen und Schüler Schritt für Schritt ihre eigene Website –
 			vom ersten "Hello World" bis zur fertigen Projektseite. Einige Ergebnisse sind hier zu sehen.
