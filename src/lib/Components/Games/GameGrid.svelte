@@ -60,76 +60,15 @@
   }
 
   .link-button {
-    position: relative;
     padding: 0.3em 1.5em;
-    border: none;
     border-radius: 0.3em;
-    background-color: #f0f0f0;
-    cursor: pointer;
-    overflow: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border: solid;
     border-color: currentColor;
     border-width: 1px;
   }
 
-
-  .link-button.active::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0%;
-    background-color: #414040;
-    z-index: 1;
-    transition: height 0.3s ease;
-  }
-
-  .link-button.active:hover::before {
-    height: 100%;
-  }
-
   .link-button.active {
-    background-color: var(--color-bg-2);
-    filter: none;
-    opacity: 1;
     border-width: 1.2px;
-  }
-
-  .link-button.inactive {
-    background-color:#f0f0f0;
-    color: #999;
-    filter: grayscale(100%);
-    opacity: 0.6;
-    cursor: not-allowed;
-    pointer-events: none;
-    box-shadow: inset 0 0 0.2em rgba(0, 0, 0, 0.1);
-  }
-
-  .link-button.inactive .icon-wrapper {
-    
-  }
-
-  .icon-wrapper {
-    position: relative;
-    z-index: 2; /* wichtiger Punkt */
-    display: flex;
-  }
-
-  .icon-wrapper svg {
-    width: 1.5em;
-    height: 1.5em;
-    fill: currentColor;
-    color: inherit;
-    transition: color 0.3s ease;
-  }
-
-  .link-button.active:hover .icon-wrapper {
-    color: var(--color-bg-2);
   }
 </style>
 

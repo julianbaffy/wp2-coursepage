@@ -58,7 +58,7 @@
 			Probiere die fertigen Spiele selbst aus.
 		</p>
 		<div class="button-container flex items-center">
-			<a href="/pygames" class="link-button bright"><span class="button-text">Projekte ansehen</span></a>
+			<a href="/pygames" class="link-button"><span class="button-text">Projekte ansehen</span></a>
 		</div>
 	</div>
 	<div class="image-container">
@@ -98,76 +98,17 @@
 	}
 
 	.link-button {
-		position: relative;
-		font-size:large;
-		margin-top: 1.5em;
-		height: 2.5em;
-		padding: 1em;
-		border: none;
 		border-radius: 2.5em;
-		cursor: pointer;
-		overflow: hidden;
-		transition: background-color 0.3s ease, color 0.3s ease;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		margin-inline: auto;
-	}
-
-	.link-button.dark{
-		color: var(--color-bg-2);
-		background-color: #414040;
-	}
-
-	.link-button.bright{
-		background-color: var(--color-bg-2);
-		color: #414040;
 	}
 
 	.link-button.dark:hover {
-		color: #414040;
 		border: solid;
 		border-width: 1.5px;
 	}
 
-	.link-button.bright:hover {
-		color: var(--color-bg-2);
+	.link-button:hover {
 		border: solid;
 		border-width: 1.5px;
-	}
-
-
-	.link-button.bright:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0%;
-    background-color: #414040;
-    z-index: 1;
-    transition: height 0.3s ease;
-  }
-
-  .link-button.dark:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0%;
-    background-color: var(--color-bg-2);
-    z-index: 1;
-    transition: height 0.3s ease;
-  }
-
-  .link-button:hover::before {
-    height: 100%;
-  }
-
-  .button-text {
-	position: relative;
-	z-index: 2;
 	}
 
 	@media (max-width: 768px) {

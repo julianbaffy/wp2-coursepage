@@ -166,3 +166,97 @@ button:focus:not(:focus-visible) {
     font-size: 17px;
 	text-align: justify;
 }
+
+	.link-button {
+		position: relative;
+		font-size:large;
+		margin-top: 1.5em;
+		height: 2.5em;
+		padding: 1em;
+		border: none;
+		cursor: pointer;
+		overflow: hidden;
+		transition: background-color 0.3s ease, color 0.3s ease;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin-inline: auto;
+		background-color: var(--color-bg-2);
+		color: #414040;
+	}
+
+	.link-button.dark{
+		color: var(--color-bg-2);
+		background-color: #414040;
+	}
+
+
+	.link-button.dark:hover {
+		color: #414040;
+		border: solid;
+		border-width: 1.5px;
+	}
+
+	.link-button:hover {
+		color: var(--color-bg-2);
+		border: solid;
+		border-width: 1.5px;
+	}
+
+
+	.link-button:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: #414040;
+    z-index: 1;
+    transition: height 0.3s ease;
+  }
+
+  .link-button.dark:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: var(--color-bg-2);
+    z-index: 1;
+    transition: height 0.3s ease;
+  }
+
+  .link-button:hover::before {
+    height: 100%;
+  }
+
+  .button-text {
+	position: relative;
+	z-index: 2;
+	}
+
+  .link-button.inactive {
+    background-color:#f0f0f0;
+    color: #999;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: inset 0 0 0.2em rgba(0, 0, 0, 0.1);
+  }
+
+  .icon-wrapper {
+    position: relative;
+    z-index: 2; /* wichtiger Punkt */
+    display: flex;
+  }
+
+  .icon-wrapper svg {
+    width: 1.5em;
+    height: 1.5em;
+    fill: currentColor;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
