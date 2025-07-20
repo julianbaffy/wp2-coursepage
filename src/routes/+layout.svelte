@@ -41,7 +41,7 @@
 	main {
 		padding: 1rem;
 		width: 100%;
-		max-width: 64rem;
+		max-width: 70rem;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
