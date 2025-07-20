@@ -75,10 +75,6 @@
 		flex: 0.6;
 	}
 
-	h1 {
-		width: 100%;
-	}
-
 	h3 {
 		padding-left: 5px;
 	}

@@ -93,7 +93,6 @@
 	}
 
 	h1 {
-		width: 100%;
 		font-size: 80px;
 		line-height: 0.6;
 		margin-top: -0.05em;
@@ -221,6 +220,5 @@
 	.content {
 		padding: 0em;
 	}
-
 	}
 </style>
