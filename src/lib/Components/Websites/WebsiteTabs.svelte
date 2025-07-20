@@ -21,8 +21,6 @@
     }
 
     function openTab(id: string){
-        const scrollY = window.scrollY;
-
         currentPosition=id;
         var i;
         var i;
@@ -34,9 +32,6 @@
         if (el) {
             el.style.display = "block";
         }
-
-        //Scrollposiotion wieder herstellen
-        requestAnimationFrame(() => window.scrollTo({ top: scrollY }));
         updateSearchParams(id);
     }
     

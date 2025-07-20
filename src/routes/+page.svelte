@@ -2,19 +2,12 @@
 	import { onMount } from "svelte";
 	import Spaceshooter from '$lib/images/Spaceshooter.jpg';
 	import DeviceMockups from "$lib/Components/Websites/DeviceMockups.svelte";
-	import { goto } from '$app/navigation';
 
 	let width = $state(0);
 
 	function updateSize() {
     	width = window.innerWidth;
   	}
-
-	function navigateToPage() {
-		goto('/websites').then(() => {
-			window.scrollTo({ top: 0, left: 0 });
-		});
-	}
 
 	onMount(() => {
 		window.scrollTo(0, 0);
