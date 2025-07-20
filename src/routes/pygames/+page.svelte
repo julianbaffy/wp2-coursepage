@@ -28,7 +28,7 @@
 
 <svelte:head>
 	<title>Pygames</title>
-	<meta name="description" content="Showcase of students products in the website project" />
+	<meta name="description" content="Showcase of students products in the Pygame project" />
 </svelte:head>
 
 <section>
