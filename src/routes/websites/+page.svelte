@@ -15,7 +15,6 @@
   	}
 
 	onMount(() => {
-		window.scrollTo(0, 0);
 		updateSize();
 		window.addEventListener("resize", updateSize);
 		return () => window.removeEventListener("resize", updateSize);
