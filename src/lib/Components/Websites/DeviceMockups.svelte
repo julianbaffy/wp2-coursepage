@@ -275,7 +275,6 @@
     }
     }
 
-    .container,
     .device-collection {
     max-width: 100%;
     margin: 40px;
