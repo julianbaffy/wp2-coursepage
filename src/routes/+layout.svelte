@@ -16,9 +16,6 @@
 
 	<footer>
 		<div>
-			&copy; Julian Baldauf, 2024
-		</div>
-		<div>
 			<a href="/impress">Impressum</a>
 		</div>
 	</footer>
@@ -49,7 +46,7 @@
 	footer {
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
+		justify-content: end;
 		align-items: center;
 		padding: 12px;
 		background-color: var(--color-bg-2) 50%;
