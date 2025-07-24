@@ -153,7 +153,7 @@ button:focus:not(:focus-visible) {
 }
 
 .content-box-dark {
-	background-color: rgba(10, 10, 10, 0.5); /* statt opacity */
+	background-color: rgba(10, 10, 10, 0.6); /* statt opacity */
 	color: rgb(239, 238, 238);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px); /* für Safari */
