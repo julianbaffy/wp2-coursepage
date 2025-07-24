@@ -134,7 +134,7 @@
 
 	.description {
 		flex: 1 1;
-		margin-bottom: 1em;
+		margin-bottom: 1.5em;
 		text-align: justify;
 	}
 
@@ -143,6 +143,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1.2em;
+		margin-top: 1em;
 	}
 
 	.info-item {
@@ -160,27 +161,28 @@
 
 	@media (max-width: 1060px) {
 		.content {
-			padding: 1em;
+			padding-inline: 1em;
 		}
 	}
 
-	@media (max-width: 914px) {
+	@media (max-width: 850px) {
 	.content {
-		flex-direction: column;
-		gap: 2.5em;
+		display: block;
 	}
 
 	.info-box {
-		width: 100%;
-		flex: 1 1 auto;
-		max-width: 100%;
+		margin-inline: 2em;
 	}
 	}
 
-	@media (max-width: 914px) and (min-width: 600px) {
+	@media (max-width: 850px) and (min-width: 600px) {
 
 	.content {
 		padding: 1em;
+	}
+
+	.info-box{
+		margin-inline: 2em;
 	}
 	
 	.info-item {
@@ -218,6 +220,12 @@
 
 	.content {
 		padding: 0em;
+		padding-bottom: 0.5em;
+	}
+
+	.info-box{
+		margin-inline: 1em;
+		margin-bottom: 1em;
 	}
 	}
 </style>
