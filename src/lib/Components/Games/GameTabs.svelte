@@ -95,7 +95,7 @@
 </script>
 
 
-<div class="tab-container w-full mt-14" bind:this={tabContainer}>
+<div class="tab-container w-full mt-8" bind:this={tabContainer}>
 	{#if isSticky}
 		<div class="sticky-blur-overlay pointer-events-none"></div>
 	{/if}

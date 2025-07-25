@@ -220,12 +220,11 @@
 
 	.content {
 		padding: 0em;
-		padding-bottom: 0.5em;
 	}
 
 	.info-box{
 		margin-inline: 1em;
-		margin-bottom: 1em;
+		margin-bottom: 2.5em;
 	}
 	}
 </style>
