@@ -1,9 +1,10 @@
 <script lang="ts">
-    import { npm_lifecycle_event } from "$env/static/private";
-    import { start } from "repl";
     import { onMount } from "svelte";
+    import Rock from "$lib/images/rock.png";
+    import Heart from "$lib/images/heart.png";
+    import Explosion from "$lib/images/explosion.png"
 
-    let {width, velocity, delay = 0, y, random=0, variant, size} :
+    let {width, velocity, delay = 0, y, random=0, variant, size=100} :
     {
         width: number; // width of the window, the clickable is moving in.
         velocity: number; //if 0 it's standing
@@ -14,20 +15,37 @@
         size: number; // width and height of clickable in pixels
     }   = $props();
 
-    let state = $state("start"); //start, active, explode, respawn
-
+    let objectState = $state("start"); //start, active, explode, respawn
     let duration = Math.floor(width / velocity);
 
+    let image = $derived.by(() => {
+            let image = Rock;
+            if(objectState ==="explode"){
+                image = Explosion;
+            }
+            else{
+                switch (variant) {
+                    case "heart":
+                        image = Heart;
+                        break;
+                    case "rock":
+                        image = Rock;
+                }
+            return image;
+        }
+    });
+   
+
     function lifecycle () {
-        state = "start";
+        objectState = "start";
         y = y + Math.floor(Math.random() * random);
-        
+        objectState = "active";
     }
 
     function explode(){
-        state = "explode";
+        objectState = "explode";
         setTimeout(()=>{
-            state = "start"
+            objectState = "start";
         }, 1000 )
     }
 
@@ -36,3 +54,5 @@
         setInterval(lifecycle, duration + 6000);
     });
 </script>
+
+<img src={image} class="" height={size} width={size}/>
