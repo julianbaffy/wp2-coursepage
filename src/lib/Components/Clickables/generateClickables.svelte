@@ -8,8 +8,8 @@
     	width = window.innerWidth;
         height = window.innerHeight;
   	}
-    
-</script>
-<div class="clickable-container">
 
+</script>
+<div class="clickable-container w-full">
+    <Clickable y={400} width={width} velocity={80} random={20} />
 </div>
