@@ -5,6 +5,7 @@
 	import Online from "$lib/images/online-gaming.svelte";
 	import Download1 from "$lib/images/download1.svelte";
 	import ArrowUpRight from "$lib/images/ArrowUpRight.svelte";
+	import GenerateClickables from "$lib/Components/Clickables/generateClickables.svelte";
 	
 	let { data } : {data: { links: GameLink[], courses: Course[];}} = $props();
 
@@ -29,6 +30,8 @@
 	<title>Pygames</title>
 	<meta name="description" content="Showcase of students products in the Pygame project" />
 </svelte:head>
+
+<GenerateClickables />
 
 <section>
 	<h1 class="games">
