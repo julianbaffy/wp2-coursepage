@@ -2,7 +2,7 @@
     import WebsiteTabs from "$lib/Components/Websites/WebsiteTabs.svelte";
 	import { onMount } from "svelte";
 	import type { Course, WebsiteLink } from "$lib/types/customTypes";
-	import overview from '$lib/images/projectoverview.png';
+	import meme from '$lib/images/modern_webdevelopement.png';
 	
 	let { data } : {data: { links: WebsiteLink[], courses: Course[];}} = $props();
 
@@ -42,13 +42,14 @@
 	<div class="description">
 		<p>
 			Direkt zu Beginn des Wahlpflichtfachs Informatik in der neunten Klasse machen die Schülerinnen und Schüler erste Erfahrungen
-			mit dem Erstellen und Gestalten von .html-Dateien. Dabei lernen sie die Grundlagen von HTML kennen – der Auszeichnungssprache,
+			mit dem Erstellen und Gestalten von Websites. Im Sinne des Memes fangen wir dabei nicht mit einem hoch abstrakten und komplexen
+			Framework an, sondern starten mit den Basics: HTML – der Auszeichnungssprache,
 			die hinter jeder Website im World Wide Web steht. Anschließend kommt mit CSS das Styling hinzu: Farben, Layouts und Schriften
 			werden angepasst. Am Ende steht ein eigenes kleines Website-Projekt, bei dem kreative Ideen mit technischem Wissen verbunden werden.
 		</p>
 	</div>
 	<div class="info">
-		<img src={overview} alt="Übersicht" class="mt-6 w-full" />
+		<img src={meme} alt="Übersicht" class="mt-6 w-full" />
 	</div>
 </section>
 
