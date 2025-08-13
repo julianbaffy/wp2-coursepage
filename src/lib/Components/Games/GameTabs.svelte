@@ -2,7 +2,7 @@
     
     import GameGrid from "./GameGrid.svelte";
     import GameTabsControls from "./GameTabsControls.svelte";
-    import { onMount, onDestroy } from "svelte";
+    import { onMount, } from "svelte";
     import type { WebsiteLink } from '$lib/types/customTypes';
     import { page } from "$app/state";
     import { goto } from "$app/navigation";
