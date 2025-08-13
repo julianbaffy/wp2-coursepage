@@ -24,10 +24,6 @@
 	});
 
 	let smallButtons = $derived(width<700 && data.courses.length>=4 || width<540 && data.courses.length>=3);
-
-	//  <div class="absolute top-0 left-0 z-0 w-full h-full -z-10">
-   // <GenerateClickables />
-	//</div>
 </script>
 
 <svelte:head>
@@ -36,8 +32,11 @@
 </svelte:head>
 
 <div class="relative min-h-screen">
+  <div class="absolute top-0 left-0 w-full h-full" style="z-index: 1;">
+    <GenerateClickables />
+	</div>
 
-<section class="z-10">
+<section class="relative" style="z-index: 10; pointer-events: none;">
 	<h1 class="games">
 		Spiele Programmieren
 	</h1>
@@ -47,11 +46,11 @@
 	</h2>
 </section>
 
-<section class="content z-10">
+<section class="content relative" style="z-index: 10; pointer-events: none;">
 	<div class="description">
 		<p>
 			In diesem Projekt programmieren die Schülerinnen und Schüler zunächst einen klassischen Spaceshooter mithilfe der Python-Bibliothek
-			"<a href="https://pygame-zero.readthedocs.io/en/stable/" class="underline">Pygame Zero</a>".
+			"<a href="https://pygame-zero.readthedocs.io/en/stable/" class="underline" style="pointer-events: auto;">Pygame Zero</a>".
 			Anschließend setzen sie eigene Spielideen um. Dabei lernen sie zentrale Konzepte der Programmierung mit Python kennen – unter anderem:</p>
 			<ul>
 				<li>den Umgang mit <strong>Objekten</strong> wie "Actor" und "Screen"</li>
@@ -65,7 +64,7 @@
 			von der Steuerung über den Sound bis hin zu eigenen Grafiken.</p>
 	</div>
 
-	<div class="info-box content-box-dark">
+	<div class="info-box content-box-dark" style="pointer-events: auto;">
 		<h3 class="games">How to Play</h3>
 		<div class="info-item">
 			<span class="icon text-gray-200"><Online /></span>
@@ -78,7 +77,7 @@
 			<div class="explanation">
 				<ol>
 					<li>Lade die zip-Datei herunter und entpacke den Spielordner.</li>
-					<li>Installiere den <a href="https://codewith.mu/" class="underline" target="_blank" > MU Editor <ArrowUpRight /></a></li>
+					<li>Installiere den <a href="https://codewith.mu/" class="underline" target="_blank" style="pointer-events: auto;"> MU Editor <ArrowUpRight /></a></li>
 					<li>Klicke "load" und wähle die .py Datei im Spielordner aus.</li>
 					<li>Klicke "run".</li>
 				</ol>
@@ -87,8 +86,9 @@
 	</div>
 </section>
 
-<GameTabs courses={data.courses} links={data.links} startPosition={manualStartPosition}  smallButtons={smallButtons} />
-
+	<div style="z-index: 10; position: relative;">
+		<GameTabs courses={data.courses} links={data.links} startPosition={manualStartPosition}  smallButtons={smallButtons} />
+	</div>
 </div>
 
 <style>

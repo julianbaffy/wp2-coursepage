@@ -25,11 +25,11 @@
         if (containerHeight === 0) return;
 
         const newClickables = [];
-        const numClickables = Math.floor(containerHeight / 300)+1; // Every 250 pixels
+        const numClickables = Math.floor(containerHeight / 250)+1; // Every 250 pixels
         
         for (let i = 0; i < numClickables; i++) {
             const baseY = (i + 1) * 300-200;
-            const maxDelay = Math.min(containerHeight * 2, 8000); // Higher container = wider delay range, max 5s
+            const maxDelay = Math.min(containerHeight * 8, 20000); // Higher container = wider delay range, max 10s
             
             newClickables.push({
                 id: i,
@@ -61,7 +61,7 @@
 <div 
     bind:this={containerElement}
     class="clickable-container w-full h-full overflow-hidden"
-    style="min-height: 100vh;"
+    style="min-height: 100vh; z-index: 1;"
 >
     {#each clickables as clickable (clickable.id)}
         <Clickable 
@@ -70,7 +70,7 @@
             delay={clickable.delay}
             size={clickable.size}
             velocity={clickable.velocity}
-            random={50}
+            random={100}
             variant="auto"
         />
     {/each}

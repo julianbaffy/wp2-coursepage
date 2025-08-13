@@ -40,7 +40,11 @@
 
     function startMovement() {
         if (isDestroyed) return;
-        
+
+        // Reset position and state
+        currentX = containerWidth + size + 200; // Start off-screen right
+        actualY = y + (random > 0 ? Math.floor(Math.random() * random * 2) - random : 0);
+
         // Set variant
         if (variant === "auto") {
             variantInternal = Math.random() < 0.25 ? "heart" : "rock";
@@ -48,9 +52,6 @@
             variantInternal = variant;
         }
 
-        // Reset position and state
-        currentX = containerWidth + size + 200; // Start off-screen right
-        actualY = y + (random > 0 ? Math.floor(Math.random() * random * 2) - random : 0);
         objectState = "moving";
 
         // Start animation
@@ -120,12 +121,12 @@
             height: {size}px;
             cursor: default;
             user-select: none;
-            z-index: 10;
+            z-index: 1;
             background: none;
             border: none;
             padding: 0;
         "
-        class="transition-opacity duration-200 {objectState === 'exploding' ? 'opacity-75' : 'opacity-100'}"
+        class="transition-opacity duration-200 {objectState === 'exploding' ? 'opacity-75' : 'opacity-100'} {objectState === 'waiting' ? 'hidden' : ''}"
     >
         <img 
             src={image} 
