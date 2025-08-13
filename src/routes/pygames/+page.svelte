@@ -24,6 +24,10 @@
 	});
 
 	let smallButtons = $derived(width<700 && data.courses.length>=4 || width<540 && data.courses.length>=3);
+
+	//  <div class="absolute top-0 left-0 z-0 w-full h-full -z-10">
+   // <GenerateClickables />
+	//</div>
 </script>
 
 <svelte:head>
@@ -32,9 +36,6 @@
 </svelte:head>
 
 <div class="relative min-h-screen">
-  <div class="absolute top-0 left-0 z-0 w-full h-full -z-10">
-    <GenerateClickables />
-	</div>
 
 <section class="z-10">
 	<h1 class="games">
