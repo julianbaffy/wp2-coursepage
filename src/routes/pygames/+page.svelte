@@ -155,6 +155,8 @@
 		flex-direction: column;
 		gap: 1.2em;
 		margin-top: 1em;
+		backdrop-filter: blur(4px);
+    	-webkit-backdrop-filter: blur(4px); /* für Safari */
 	}
 
 	.info-item {
