@@ -29,7 +29,7 @@
         
         for (let i = 0; i < numClickables; i++) {
             const baseY = (i + 1) * 300-200;
-            const maxDelay = Math.min(containerHeight * 8, 20000); // Higher container = wider delay range, max 10s
+            const maxDelay = Math.min(containerHeight * 5 +containerWidth*4, 10000); // Higher container = wider delay range, max 10s
             
             newClickables.push({
                 id: i,
