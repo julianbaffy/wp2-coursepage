@@ -2,77 +2,137 @@
     import { onMount } from "svelte";
     import Rock from "$lib/images/rock.png";
     import Heart from "$lib/images/heart.png";
-    import Explosion from "$lib/images/explosion.png"
+    import Explosion from "$lib/images/explosion.png";
 
-    let {width, velocity, delay = 0, y, random=0, variant="auto", size=30} :
-    {
-        width: number; // width of the window, the clickable is moving in.
-        velocity: number; //if 0 it's standing
-        delay?: number; // Starting delay
-        y: number; // y-Position in window (absolute)
-        random?: number; // random vriation of y
+    let {
+        containerWidth, 
+        velocity, 
+        delay = 0, 
+        y, 
+        random = 0, 
+        variant = "auto", 
+        size = 30
+    } : {
+        containerWidth: number; // width of the container
+        velocity: number; // pixels per second
+        delay?: number; // Starting delay in ms
+        y: number; // y-Position in container
+        random?: number; // random variation of y
         variant?: "heart" | "rock" | "auto";
         size?: number; // width and height of clickable in pixels
-    }   = $props();
+    } = $props();
 
-    let objectState = $state("start"); //start, active, explode, respawn
-    let duration = velocity !== 0 ? Math.floor(width / velocity) : 0;
+    let objectState = $state("waiting"); // waiting, moving, exploding, hidden
     let variantInternal = $state("rock");
+    let currentX = $state(-size - 10); // Start position off-screen right
+    let animationId = $state(0);
+    let isDestroyed = $state(false);
+
+    // Calculate actual Y position with random variation
+    let actualY = $state(y + (random > 0 ? Math.floor(Math.random() * random * 2) - random : 0));
 
     let image = $derived.by(() => {
-        if (objectState === "explode") {
+        if (objectState === "exploding" && variantInternal === "rock") {
             return Explosion;
         }
-
-        switch (variantInternal) {
-            case "heart":
-                return Heart;
-            case "rock":
-                return Rock;
-            default:
-                return Rock; // Fallback
-        }
+        return variantInternal === "heart" ? Heart : Rock;
     });
-   
 
-    function lifecycle () {
+    function startMovement() {
+        if (isDestroyed) return;
+        
+        // Set variant
         if (variant === "auto") {
-            variantInternal = Math.floor(Math.random() * 4) === 0 ? "heart" : "rock";
+            variantInternal = Math.random() < 0.25 ? "heart" : "rock";
+        } else {
+            variantInternal = variant;
         }
-        objectState = "start";
-        y = y + Math.floor(Math.random() * random);
-        objectState = "active";
+
+        // Reset position and state
+        currentX = containerWidth + size + 200; // Start off-screen right
+        actualY = y + (random > 0 ? Math.floor(Math.random() * random * 2) - random : 0);
+        objectState = "moving";
+
+        // Start animation
+        animate();
     }
 
-    function explode(){
-		objectState = "explode";
-		setTimeout(() => {
-			objectState = "respawn";
-		}, 300);
-        //respawn()
+    function animate() {
+        if (objectState !== "moving" || isDestroyed) return;
+
+        const step = velocity / 60; // 60 FPS
+        currentX -= step;
+
+        // Check if off-screen left
+        if (currentX < -size - 200) {
+            objectState = "hidden";
+            // Restart after delay
+            setTimeout(() => {
+                if (!isDestroyed) startMovement();
+            }, 3000 + Math.random() * 3000); // 3-6 second delay
+            return;
+        }
+
+        animationId = requestAnimationFrame(animate);
     }
 
-    function respawn(){
-        objectState = "respawn";
-        setTimeout(lifecycle, 6000);
+    function explode() {
+        if (objectState !== "moving") return;
+        
+        objectState = "exploding";
+        cancelAnimationFrame(animationId);
+        
+        setTimeout(() => {
+            if (!isDestroyed) {
+                objectState = "hidden";
+                // Restart after delay
+                setTimeout(() => {
+                    if (!isDestroyed) startMovement();
+                }, 2000 + Math.random() * 2000);
+            }
+        }, 300);
     }
 
-    onMount (() => {
-        setTimeout(lifecycle, delay);
-        setInterval(lifecycle, duration + 6000);
+    onMount(() => {
+        // Start with initial delay
+        setTimeout(() => {
+            if (!isDestroyed) startMovement();
+        }, delay);
+
+        // Cleanup function
+        return () => {
+            isDestroyed = true;
+            cancelAnimationFrame(animationId);
+        };
     });
 </script>
 
-<img src={image} height={size} width={size} 
-    onclick={explode}
-    style={`
-        top: ${y}px;
-        right: -${size + 10}px;
-        transform: ${objectState === "start" ? `translateX(-${width + size + 10}px)` : "none"};
-        transition: ${objectState === "start" ? `transform ${duration}ms linear` : "none"};
-    `}
-    class={
-        `absolute` +
-        (objectState === "respawn" ? " hidden" : "")
-    }
-/>
+{#if objectState !== "hidden"}
+    <button 
+        type="button"
+        aria-label={variantInternal}
+        onclick={explode}
+        style="
+            position: absolute;
+            top: {actualY}px;
+            left: {currentX}px;
+            width: {size}px;
+            height: {size}px;
+            cursor: default;
+            user-select: none;
+            z-index: 10;
+            background: none;
+            border: none;
+            padding: 0;
+        "
+        class="transition-opacity duration-200 {objectState === 'exploding' ? 'opacity-75' : 'opacity-100'}"
+    >
+        <img 
+            src={image} 
+            alt={variantInternal}
+            width={size} 
+            height={size}
+            style="display: block;"
+        />
+    </button>
+{/if}
