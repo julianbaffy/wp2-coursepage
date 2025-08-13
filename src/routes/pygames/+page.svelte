@@ -31,9 +31,12 @@
 	<meta name="description" content="Showcase of students products in the Pygame project" />
 </svelte:head>
 
-<GenerateClickables />
+<div class="relative min-h-screen">
+  <div class="absolute top-0 left-0 z-0 w-full h-full -z-10">
+    <GenerateClickables />
+	</div>
 
-<section>
+<section class="z-10">
 	<h1 class="games">
 		Spiele Programmieren
 	</h1>
@@ -43,7 +46,7 @@
 	</h2>
 </section>
 
-<section class="content">
+<section class="content z-10">
 	<div class="description">
 		<p>
 			In diesem Projekt programmieren die Schülerinnen und Schüler zunächst einen klassischen Spaceshooter mithilfe der Python-Bibliothek
@@ -85,6 +88,8 @@
 
 <GameTabs courses={data.courses} links={data.links} startPosition={manualStartPosition}  smallButtons={smallButtons} />
 
+</div>
+
 <style>
 	section {
 		display: flex;
@@ -92,6 +97,7 @@
 		justify-content: center;
 		align-items: center;
 		flex: 0.6;
+		z-index: 10;
 	}
 
 	h1 {
@@ -133,6 +139,7 @@
 		gap: 2em;
 		width: 100%;
 		margin: 0 auto;
+		z-index: 10;
 	}
 
 	.description {
