@@ -31,7 +31,7 @@
 	<meta name="description" content="Showcase of students products in the Pygame project" />
 </svelte:head>
 
-<div class="relative min-h-screen overflow-none">
+<div class="relative min-h-screen">
   <div class="absolute top-0 left-0 w-full h-full" style="z-index: 1;">
     <GenerateClickables />
 	</div>
