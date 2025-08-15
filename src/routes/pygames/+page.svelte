@@ -27,7 +27,7 @@
 </script>
 
 <svelte:head>
-	<title>Pygames</title>
+	<title>WP2 - Pygames</title>
 	<meta name="description" content="Showcase of students products in the Pygame project" />
 </svelte:head>
 
