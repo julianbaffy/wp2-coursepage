@@ -18,8 +18,8 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Showcase of students products in the website project" />
+	<title>WP2 - Home</title>
+	<meta name="description" content="Showcase of students products of different projects" />
 </svelte:head>
 
 <section>
