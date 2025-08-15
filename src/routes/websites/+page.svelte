@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>WP2 - Websites</title>
 	<meta name="description" content="Showcase of students products in the website project" />
 </svelte:head>
 
