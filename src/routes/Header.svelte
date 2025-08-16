@@ -5,7 +5,7 @@
 </script>
 
 <header>
-	<div class="header-container">
+	<div class="header-container overflow-x-hidden">
 	<div class="corner">
 		<a href="https://www.apostelgymnasium.de/" target="_blank">
 			<img src={logo} alt="Apostelgymnasium" />

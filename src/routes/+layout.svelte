@@ -8,7 +8,7 @@
 <div class="app">
 	<Header />
 
-	<div class="main-container flex-grow overflow-x-hidden">
+	<div class="main-container flex-grow">
 		<main>
 			{@render children()}
 		</main>
