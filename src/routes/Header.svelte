@@ -5,7 +5,7 @@
 </script>
 
 <header>
-	<div class="header-container overflow-x-hidden">
+	<div class="header-container">
 	<div class="corner">
 		<a href="https://www.apostelgymnasium.de/" target="_blank">
 			<img src={logo} alt="Apostelgymnasium" />
@@ -46,7 +46,7 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		width: 100%;
+		width: 100vh;
 		z-index: 50;
 		padding-bottom: 1em;
 	}
