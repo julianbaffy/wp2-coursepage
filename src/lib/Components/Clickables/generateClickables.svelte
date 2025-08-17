@@ -75,3 +75,11 @@
         />
     {/each}
 </div>
+
+<style>
+    .clickable-container {
+        position: absolute;
+        inset: 0;
+        overflow: visible;
+    }
+</style>
