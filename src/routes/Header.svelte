@@ -46,7 +46,7 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		width: 100vh;
+		width: 100vw;
 		z-index: 50;
 		padding-bottom: 1em;
 	}
