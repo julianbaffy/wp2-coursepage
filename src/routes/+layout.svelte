@@ -8,7 +8,7 @@
 <div class="app">
 	<Header />
 
-	<div class="main-container flex-grow">
+	<div class="main-container">
 		<main>
 			{@render children()}
 		</main>
@@ -33,6 +33,7 @@
 		display: flex;
 		flex-grow: 1;
 		flex-direction: column;
+		max-width: 100%;
 	}
 
 	main {
