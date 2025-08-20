@@ -2,10 +2,23 @@
 	import { page } from '$app/state';
 	import logo from '$lib/images/APG-logo.jpg';
 	import github from '$lib/images/github.svg';
+	import { onMount } from "svelte";
+
+	let width = $state(0);
+
+	function updateSize() {
+    	width = window.innerWidth;
+  	}
+
+	onMount(() => {
+		updateSize();
+		window.addEventListener("resize", updateSize);
+		return () => window.removeEventListener("resize", updateSize);
+	});
 </script>
 
 <header>
-	<div class="header-container">
+	<div class="header-container w-[{width}px]">
 	<div class="corner">
 		<a href="https://www.apostelgymnasium.de/" target="_blank">
 			<img src={logo} alt="Apostelgymnasium" />
@@ -46,7 +59,6 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		width: 100%;
 		z-index: 50;
 		padding-bottom: 1em;
 	}
