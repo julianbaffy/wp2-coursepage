@@ -1,12 +1,27 @@
 <script lang="ts">
 	import Header from './Header.svelte';
 	import '../app.css';
+	import { onMount } from "svelte";
+
+	let width = $state(0);
+
+	function updateSize() {
+    	width = window.innerWidth;
+  	}
+
+	onMount(() => {
+		updateSize();
+		window.addEventListener("resize", updateSize);
+		return () => window.removeEventListener("resize", updateSize);
+	});
 	
 	let { children } = $props();
 </script>
 
 <div class="app">
-	<Header />
+	<div class="header-container w-[{width}px]">
+		<Header />
+	</div>
 
 	<div class="main-container">
 		<main>
