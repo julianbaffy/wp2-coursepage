@@ -134,6 +134,7 @@
     .tab-controls{
         overflow-x: hidden;
         overflow-y: hidden;
+        pointer-events: auto;
     }
 
 .sticky-blur-overlay {
@@ -147,6 +148,10 @@
 	mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 	-webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 	z-index: 10; /* unter .tab-controls (z-20), aber über allem anderen */
+}
+
+.tab-container{
+    pointer-events: none;
 }
 
 </style>

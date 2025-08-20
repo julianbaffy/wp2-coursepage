@@ -18,6 +18,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.25em;
     padding: 1.25em;
+    pointer-events: none;
   }
 
   .tile {
@@ -34,6 +35,7 @@
     box-shadow:
     0.235em 0.235em 0.588em rgba(0, 0, 0, 0.1)  /* standard */;
     font-size: 17px;
+    pointer-events: auto;
   }
 
   a {
