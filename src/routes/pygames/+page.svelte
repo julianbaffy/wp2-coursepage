@@ -5,7 +5,6 @@
 	import Online from "$lib/images/online-gaming.svelte";
 	import Download1 from "$lib/images/download1.svelte";
 	import ArrowUpRight from "$lib/images/ArrowUpRight.svelte";
-	import GenerateClickables from "$lib/Components/Clickables/generateClickables.svelte";
 	
 	let { data } : {data: { links: GameLink[], courses: Course[];}} = $props();
 
@@ -30,11 +29,6 @@
 	<title>WP2 - Pygames</title>
 	<meta name="description" content="Showcase of students products in the Pygame project" />
 </svelte:head>
-
-<div class="relative min-h-screen">
-  <div class="absolute top-0 left-0 w-full h-full" style="z-index: 1;">
-    <GenerateClickables />
-	</div>
 
 <section class="relative" style="z-index: 10; pointer-events: none;">
 	<h1 class="games">
@@ -89,7 +83,6 @@
 	<div style="z-index: 10; position: relative;">
 		<GameTabs courses={data.courses} links={data.links} startPosition={manualStartPosition}  smallButtons={smallButtons} />
 	</div>
-</div>
 
 <style>
 	section {
